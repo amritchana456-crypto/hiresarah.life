@@ -1,4 +1,3 @@
-import { Button } from "./Button";
 import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
 
@@ -98,5 +97,3 @@ export function FounderCTA() {
   );
 }
 
-// Button import only used implicitly above? Keep silent to avoid unused warning
-void Button;
