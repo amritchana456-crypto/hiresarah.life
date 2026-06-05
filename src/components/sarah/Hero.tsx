@@ -3,29 +3,23 @@ import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-32 pb-24 sm:pt-36 sm:pb-32">
+    <section id="top" className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">
       {/* Soft background blobs */}
       <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full bg-primary-soft blur-3xl opacity-60" />
       <div aria-hidden className="pointer-events-none absolute top-20 right-0 h-[400px] w-[400px] rounded-full bg-pink-soft blur-3xl opacity-50" />
 
-      <div className="relative mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
+      <div className="relative mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-12 px-5 sm:px-8 sm:gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:px-10">
         {/* Left: copy */}
         <div className="relative z-10">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/70 px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-primary backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-green animate-pulse-dot" />
-              Digital team member for agency managers
-            </span>
-          </Reveal>
-          <Reveal delay={80}>
             <h1 className="mt-6 text-[40px] font-extrabold leading-[1.04] tracking-tight text-foreground sm:text-[56px] lg:text-[72px]">
-              Stop wasting team time on{" "}
-              <span className="text-gradient">unqualified</span> property inquiries.
+              Stop wasting time on{" "}
+              <span className="text-gradient">non-serious</span> buyers.
             </h1>
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-foreground sm:text-[18px]">
-              Sarah replies fast, asks the right questions, collects buyer details, shares matching property links, books viewings, and routes serious leads to the right agent — even when your team is busy, offline, or done for the day.
+              Sarah qualifies leads, books viewings, and hands off serious buyers to your team, automatically, 24/7.
             </p>
           </Reveal>
           <Reveal delay={220}>
