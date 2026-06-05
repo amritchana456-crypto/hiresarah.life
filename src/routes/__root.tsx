@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Sarah | Digital Team Member for Real Estate Managers" },
+      { name: "description", content: "Sarah helps real estate agency managers qualify inquiries, protect team time, reply 24/7, save lead details, share property links, and book viewings." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Sarah | Digital Team Member for Real Estate Managers" },
+      { property: "og:description", content: "Sarah helps real estate agency managers qualify inquiries, protect team time, reply 24/7, save lead details, share property links, and book viewings." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Sarah | Digital Team Member for Real Estate Managers" },
+      { name: "twitter:description", content: "Sarah helps real estate agency managers qualify inquiries, protect team time, reply 24/7, save lead details, share property links, and book viewings." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/bHqZ0RvjDdg5NFqjs48WQO95EX43/social-images/social-1780649527332-ChatGPT_Image_Jun_5,_2026,_11_51_51_AM.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/bHqZ0RvjDdg5NFqjs48WQO95EX43/social-images/social-1780649527332-ChatGPT_Image_Jun_5,_2026,_11_51_51_AM.webp" },
     ],
     links: [
       {
