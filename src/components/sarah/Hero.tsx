@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">
+    <section id="top" className="relative overflow-hidden pt-18 pb-16 sm:pt-20 sm:pb-20 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">
       {/* Soft background blobs */}
       <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full bg-primary-soft blur-3xl opacity-60" />
       <div aria-hidden className="pointer-events-none absolute top-20 right-0 h-[400px] w-[400px] rounded-full bg-pink-soft blur-3xl opacity-50" />
@@ -12,37 +12,31 @@ export function Hero() {
         {/* Left: copy */}
         <div className="relative z-10">
           <Reveal>
-            <h1 className="mt-6 text-[40px] font-extrabold leading-[1.04] tracking-tight text-foreground sm:text-[56px] lg:text-[72px]">
+            <h1 className="mt-2 text-[40px] font-extrabold leading-[1.04] tracking-tight text-foreground sm:text-[56px] lg:mt-6 lg:text-[72px]">
               Stop wasting time on{" "}
               <span className="text-gradient">non-serious</span> buyers.
             </h1>
           </Reveal>
           <Reveal delay={160}>
-            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-foreground sm:text-[18px]">
+            <p className="hidden lg:block mt-6 max-w-xl text-[17px] leading-relaxed text-muted-foreground sm:text-[18px]">
               Sarah qualifies leads, books viewings, and hands off serious buyers to your team, automatically, 24/7.
             </p>
-          </Reveal>
-          <Reveal delay={220}>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Button size="lg" onClick={() => document.querySelector("#cta")?.scrollIntoView({ behavior: "smooth" })}>
-                Hire Sarah for 3 days free
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </Button>
-              <a href="#how" className="text-sm font-semibold text-foreground underline-offset-4 transition-colors hover:text-primary hover:underline">
-                See how Sarah works →
-              </a>
-            </div>
-          </Reveal>
-          <Reveal delay={280}>
-            <div className="mt-5 flex items-center gap-2 text-[13px] text-muted-foreground">
-              <span className="inline-flex h-2 w-2 rounded-full bg-green animate-pulse-dot" />
-              Only 3 agency managers can test Sarah free.
-            </div>
           </Reveal>
         </div>
 
         {/* Right: visual cluster */}
         <HeroVisual />
+      </div>
+
+      <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10 mt-10 flex flex-col items-center gap-4">
+        <Button size="lg" onClick={() => document.querySelector("#cta")?.scrollIntoView({ behavior: "smooth" })}>
+          Hire Sarah for 3 days free
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </Button>
+        <div className="flex items-center gap-2 text-[13px] text-muted-foreground">
+          <span className="inline-flex h-2 w-2 rounded-full bg-green animate-pulse-dot" />
+          Only 3 agency managers can test Sarah free.
+        </div>
       </div>
     </section>
   );

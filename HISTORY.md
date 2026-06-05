@@ -22,6 +22,16 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+### Hero section mobile/tablet layout — `src/components/sarah/Hero.tsx`
+
+1. **Tighter navbar-to-headline gap** — Reduced section top padding from `pt-24 sm:pt-28` to `pt-18 sm:pt-20` on mobile/tablet (desktop `lg:pt-40` unchanged). Also reduced h1 top margin from `mt-6` to `mt-2` below `lg`.
+2. **Hidden subheadline on mobile/tablet** — Added `hidden lg:block` to the subheadline `<p>` so it only renders on desktop.
+3. **Hidden "See how Sarah works →" on mobile/tablet** — Added `hidden lg:inline` to the link so it only renders on desktop.
+
+Mobile/tablet hero order is now: **Headline → "Hire Sarah for 3 days free" button → social proof badge.**
+
+---
+
 ### Hero section copy edits — `src/components/sarah/Hero.tsx`
 
 1. **Removed badge** — Deleted the "Digital team member for agency managers" pill/badge from the top of the hero copy entirely.
