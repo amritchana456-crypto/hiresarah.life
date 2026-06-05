@@ -32,6 +32,19 @@ Mobile/tablet hero order is now: **Headline → "Hire Sarah for 3 days free" but
 
 ---
 
+### Hero CTA moved below container — `src/components/sarah/Hero.tsx`
+
+- Moved the "Hire Sarah for 3 days free" button and "Only 3 agency managers can test Sarah free." social proof line out of the left grid column and into a new centered block after the grid container.
+- Layout order is now: **Headline → Container → Button**.
+
+---
+
+### CLAUDE.md — Change Log instruction added
+
+- Added a "Change Log" section instructing Claude to append a summary to `HISTORY.md` after every edit, fix, or change.
+
+---
+
 ### Hero section copy edits — `src/components/sarah/Hero.tsx`
 
 1. **Removed badge** — Deleted the "Digital team member for agency managers" pill/badge from the top of the hero copy entirely.

@@ -15,6 +15,10 @@ bun format       # prettier
 
 No test suite is configured.
 
+## Change Log
+
+After every edit, fix, or change — no matter how small — append a summary to `HISTORY.md` under today's date (`## YYYY-MM-DD`). Include: what file(s) were changed, what was done, and why (if known). Keep entries concise (bullet points). This must be done before the conversation ends.
+
 ## Architecture
 
 **TanStack Start** (React 19, TypeScript) with SSR, deployed to **Cloudflare Workers** via Nitro.
