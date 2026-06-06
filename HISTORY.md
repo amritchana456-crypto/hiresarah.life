@@ -6,6 +6,21 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Halved hero SVG message animation speed, simplified hero font, de-gradiented subheadline quote
+- Doubled the `dur` and `begin` values on every chat-message pop-in/pop-out scale animation and opacity fade-out in `.svg/Hero.svg` (26 unique animation timings, 32 instances) so the message bubbles grow in, hold, and fade out at roughly half the previous speed while preserving their original stagger order. Left the character's idle micro-animations (head/eye/arm) untouched since only the messages were flagged as too fast.
+- Removed the redundant local `heroFont` constant and inline `fontFamily` styles from `src/components/sarah/Hero.tsx` — the headline and subheadline now simply inherit `font-family: var(--font-sans)` from `body` (already "Plus Jakarta Sans"), guaranteeing they match the site-wide font by construction instead of duplicating the value.
+- Removed the `text-gradient` class from `"is this still available?"` in the hero subheadline so it renders in plain dark/foreground text like the rest of the line, keeping `font-bold` for emphasis. The headline's gradient on "close deals?" is unchanged.
+
+### Slowed hero message pop-ins and widened mobile visual
+- Slowed the hero SVG message scale keyframes so message cards grow in over a calmer interval instead of snapping open quickly.
+- Replaced the small mobile/tablet hero visual caps with viewport-aware widths so the SVG fills the available horizontal screen space.
+- Kept the desktop hero visual capped and right-aligned for balance with the headline.
+
+### Tuned hero SVG color, loop speed, and sizing
+- Recolored the hero SVG's teal/orange UI accents into the Sarah purple-pink brand palette while leaving skin tones, outlines, and whites intact.
+- Slowed the quick hero message opacity fade-outs so the animated message loop reads calmer.
+- Increased the hero visual wrapper sizes on mobile, tablet, and desktop so the square SVG fills the section more naturally.
+
 ### Re-added full problem SVG arm movement
 - Restored the looping rotation on the reused hand/arm layer in `.svg/Problem.svg` so the scratching motion again moves the full arm.
 - Left the existing finger squeeze details, slower question reveal loop, and brand recoloring unchanged.
