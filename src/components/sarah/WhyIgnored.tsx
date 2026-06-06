@@ -1,5 +1,5 @@
 import { Reveal } from "./Reveal";
-import eliteAgenciesSvg from "../../../.svg/EliteAgencies.svg";
+import realEstateSvg from "../../../.svg/RealEstate.svg";
 import lowIntentOptionsSvg from "../../../.svg/LowIntentOptions.svg";
 import lowIntentPersonSvg from "../../../.svg/LowIntentPerson.svg";
 import speedCatchSvg from "../../../.svg/SpeedCatch.svg";
@@ -155,12 +155,12 @@ export function WhyIgnored() {
                 Top agencies stopped losing buyers the day they hired Sarah.
               </p>
               <img
-                src={eliteAgenciesSvg}
+                src={realEstateSvg}
                 alt=""
                 aria-hidden
-                className="mx-auto h-auto w-full max-w-[280px] object-contain sm:max-w-none"
-                width={1004}
-                height={744}
+                className="mx-auto h-auto w-full max-w-[320px] object-contain sm:max-w-none"
+                width={3200}
+                height={2000}
               />
             </div>
           </div>

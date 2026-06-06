@@ -6,6 +6,13 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Swapped the bridge card illustration for a new brand-recolored "handshake" SVG
+- Saved the user-provided "Real estate.svg" (two businessmen shaking hands, gold coin stacks, floating network/dollar icons, a background blob, and a floor bar) into the repo as `.svg/RealEstate.svg`.
+- Recolored only the off-brand background/decorative shapes to the brand purple/lavender/pink family, while leaving the gold coin colors and the figures' navy suits untouched per the user's request: background blob `#ebf3fa` → `#A99AFB`, floor bar `#2e3552` → `#6446E8`, and the floating decorative bubble-icon/arrow fills `#8eb6dc` → alternating `#A99AFB`/`#C75CF0` (8 of the 13 occurrences — the other 5 are the figures' clothing and were left alone).
+- Fixed a pre-existing bug in the source SVG: the root `<svg>` was missing the `xmlns:xlink` namespace declaration needed by its `<use xlink:href>` elements, which made browsers reject the file as malformed XML and show a broken-image icon when used in an `<img src>`. Added `xmlns:xlink="http://www.w3.org/1999/xlink"` to the root tag.
+- `src/components/sarah/WhyIgnored.tsx`: replaced the `eliteAgenciesSvg` import/usage with `realEstateSvg`, and updated the `<img>`'s `width`/`height` to the new SVG's intrinsic `3200x2000` size (and bumped the mobile `max-w` from `280px` to `320px` to suit its wider aspect ratio).
+- Verified visually with a headless-browser screenshot of the rendered "Why Ignored" section — the illustration now blends into the bold `bg-gradient-primary` bridge card the same way the previous illustration did.
+
 ### Added recolored illustration to the "Why do people ignore?" bridge card
 - Saved the user-provided "person at laptop" illustration into the repo as `.svg/EliteAgencies.svg`, preserving all 41 `<animateTransform>` animations and both hidden popup-icon layers (Layer 12/13) intact.
 - Removed the SVG's own pale-blue background blob group (`Layer 1`, two `#dff3fc` paths) since the gradient panel already provides the backdrop.
