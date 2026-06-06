@@ -6,6 +6,11 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Updated hero subheadline copy/gradient and tightened spacing to Problem section
+- `src/components/sarah/Hero.tsx`: replaced the subheadline text — `Or to answer "is this still available?" 40 times a day.` is now `Or to answer the same questions 40 times a day.`, with the `text-gradient` utility (the same purple→pink gradient as "close deals?") applied to "40 times a day." instead of bolding the old quoted phrase. Same font-weight/size as the rest of the line.
+- `src/components/sarah/Hero.tsx`: reduced the section's bottom padding from `pb-16 sm:pb-20 md:pb-24 lg:pb-28` to `pb-10 sm:pb-14 md:pb-16 lg:pb-20` to close the overly large gap before the Problem section.
+- Investigated the headline font per a report that it looked different from "Plus Jakarta Sans": confirmed via Playwright (computed styles + screenshot) that the `<h1>` already inherits `--font-sans` ("Plus Jakarta Sans") identically to the rest of the page and the Google Font request loads successfully (200) — no code change needed there.
+
 ### Halved hero SVG message animation speed, simplified hero font, de-gradiented subheadline quote
 - Doubled the `dur` and `begin` values on every chat-message pop-in/pop-out scale animation and opacity fade-out in `.svg/Hero.svg` (26 unique animation timings, 32 instances) so the message bubbles grow in, hold, and fade out at roughly half the previous speed while preserving their original stagger order. Left the character's idle micro-animations (head/eye/arm) untouched since only the messages were flagged as too fast.
 - Removed the redundant local `heroFont` constant and inline `fontFamily` styles from `src/components/sarah/Hero.tsx` — the headline and subheadline now simply inherit `font-family: var(--font-sans)` from `body` (already "Plus Jakarta Sans"), guaranteeing they match the site-wide font by construction instead of duplicating the value.

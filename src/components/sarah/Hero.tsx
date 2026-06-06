@@ -4,7 +4,7 @@ import heroSvg from "../../../.svg/Hero.svg";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-18 pb-16 sm:pt-20 sm:pb-20 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28">
+    <section id="top" className="relative overflow-hidden pt-18 pb-10 sm:pt-20 sm:pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
       {/* Soft background blobs */}
       <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full bg-primary-soft blur-3xl opacity-60" />
       <div aria-hidden className="pointer-events-none absolute top-20 right-0 h-[400px] w-[400px] rounded-full bg-pink-soft blur-3xl opacity-50" />
@@ -19,9 +19,8 @@ export function Hero() {
           </Reveal>
           <Reveal delay={160} className="order-2 relative z-10 lg:mt-6">
             <p className="max-w-xl text-[18px] font-medium leading-relaxed text-foreground sm:text-[20px] lg:text-[22px]">
-              Or to answer{" "}
-              <span className="font-bold">"is this still available?"</span>{" "}
-              40 times a day.
+              Or to answer the same questions{" "}
+              <span className="text-gradient">40 times a day.</span>
             </p>
           </Reveal>
 
