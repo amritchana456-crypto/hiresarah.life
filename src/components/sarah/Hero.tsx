@@ -12,7 +12,7 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-7 px-5 sm:px-8 sm:gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 lg:px-10 xl:gap-12">
         <div className="contents lg:block lg:max-w-[650px]">
           <Reveal className="order-1 relative z-10">
-            <h1 className="mt-2 text-[42px] font-medium leading-[1.06] text-foreground sm:text-[58px] lg:mt-0 lg:text-[72px]">
+            <h1 className="mt-2 text-[42px] font-extrabold leading-[1.06] text-foreground sm:text-[58px] lg:mt-0 lg:text-[72px]">
               Did you hire agents to{" "}
               <span className="whitespace-nowrap text-gradient font-extrabold">close deals?</span>
             </h1>

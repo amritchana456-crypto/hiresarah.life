@@ -6,6 +6,9 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Reworked Problem section headline into a three-beat line
+- `src/components/sarah/Problem.tsx`: changed the headline from "First they contact. **Then they ignore.**" to three explicit lines — "First people contact." / "You reply, send links." / "**They ignore.**" — moving the `text-gradient` accent span to the final line so the irony lands on the punchline. Spells out the wasted reply/link-sending effort referenced by the subheading below it.
+
 ### Updated hero subheadline copy/gradient and tightened spacing to Problem section
 - `src/components/sarah/Hero.tsx`: replaced the subheadline text — `Or to answer "is this still available?" 40 times a day.` is now `Or to answer the same questions 40 times a day.`, with the `text-gradient` utility (the same purple→pink gradient as "close deals?") applied to "40 times a day." instead of bolding the old quoted phrase. Same font-weight/size as the rest of the line.
 - `src/components/sarah/Hero.tsx`: reduced the section's bottom padding from `pb-16 sm:pb-20 md:pb-24 lg:pb-28` to `pb-10 sm:pb-14 md:pb-16 lg:pb-20` to close the overly large gap before the Problem section.
