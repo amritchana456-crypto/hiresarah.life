@@ -6,6 +6,17 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Added recolored illustration to the "Why do people ignore?" bridge card
+- Saved the user-provided "person at laptop" illustration into the repo as `.svg/EliteAgencies.svg`, preserving all 41 `<animateTransform>` animations and both hidden popup-icon layers (Layer 12/13) intact.
+- Removed the SVG's own pale-blue background blob group (`Layer 1`, two `#dff3fc` paths) since the gradient panel already provides the backdrop.
+- Recolored the illustration into the Sarah brand palette: cool blues/navys → purple/lavender (`#7357F6`, `#6446E8`, `#A99AFB`, `#383a45`), warm red/orange/yellow accents → pink/violet (`#F45BD4`, `#A855F7`, `#C75CF0`), and skin tones → warm `#F6BC9F`/`#d2715e`.
+- `src/components/sarah/WhyIgnored.tsx`: restructured the bridge card from a single centered headline into a responsive two-column layout (`grid grid-cols-1 sm:grid-cols-2`) with the headline on the left and the new illustration on the right, stacking on mobile.
+- Done per user request to make the bridge card feel less generic by pairing the gradient panel's copy with a brand-recolored illustration.
+
+### Restyled the "Why do people ignore?" bridge card as a gradient panel with new copy
+- `src/components/sarah/WhyIgnored.tsx`: replaced the white "Elite agencies don't lose them to any of this..." bridge card with a `bg-gradient-primary` panel matching the final CTA panel style in `FounderCTA.tsx` (large rounded corners, white text, blurred white/pink corner orbs), and swapped the two-line copy for a single centered headline: "Top agencies stopped losing buyers the day they hired Sarah."
+- Done per user request to make the bridge card visually consistent with the page's closing CTA section and to tighten the copy to a shorter, more direct, human line.
+
 ### Changed reason-card icon/text row from stacked to icon-left layout
 - `src/components/sarah/WhyIgnored.tsx`: changed the icon+caption row in each illustrated `ReasonCard` (Speed, Low intent, Comparing) from a vertical `flex-col items-center text-center` stack back to a horizontal row (`flex items-center gap-4`), with the round icon badge pinned to the left (`shrink-0`) and the caption text in a `flex-1 text-center` wrapper so it's horizontally centered in the remaining space to the icon's right, vertically aligned with it. The illustration image on top of each card is unchanged.
 

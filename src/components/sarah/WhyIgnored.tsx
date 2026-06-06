@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import eliteAgenciesSvg from "../../../.svg/EliteAgencies.svg";
 import lowIntentOptionsSvg from "../../../.svg/LowIntentOptions.svg";
 import lowIntentPersonSvg from "../../../.svg/LowIntentPerson.svg";
 import speedCatchSvg from "../../../.svg/SpeedCatch.svg";
@@ -146,14 +147,22 @@ export function WhyIgnored() {
 
         {/* Bridge card */}
         <Reveal delay={300}>
-          <div className="mx-auto mt-16 max-w-3xl rounded-[28px] border border-pink/20 bg-white p-7 shadow-card sm:p-9">
-            <p className="text-[18px] font-semibold leading-snug text-foreground sm:text-[20px]">
-              <span className="text-gradient">Elite agencies</span> don't lose them to any of this.
-            </p>
-            <p className="mt-3 text-[14.5px] text-muted-foreground">
-              They reply instantly, qualify automatically, and never let a serious buyer slip
-              through.
-            </p>
+          <div className="relative mx-auto mt-16 max-w-4xl overflow-hidden rounded-[36px] bg-gradient-primary p-10 shadow-float sm:p-14">
+            <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
+            <div aria-hidden className="pointer-events-none absolute -left-10 -bottom-10 h-56 w-56 rounded-full bg-pink/40 blur-3xl" />
+            <div className="relative grid grid-cols-1 items-center gap-8 sm:grid-cols-2 sm:gap-10">
+              <p className="text-[20px] font-bold leading-snug text-white text-center sm:text-[26px] sm:text-left">
+                Top agencies stopped losing buyers the day they hired Sarah.
+              </p>
+              <img
+                src={eliteAgenciesSvg}
+                alt=""
+                aria-hidden
+                className="mx-auto h-auto w-full max-w-[280px] object-contain sm:max-w-none"
+                width={1004}
+                height={744}
+              />
+            </div>
           </div>
         </Reveal>
       </div>
