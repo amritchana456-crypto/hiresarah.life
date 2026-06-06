@@ -6,6 +6,58 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Re-added full problem SVG arm movement
+- Restored the looping rotation on the reused hand/arm layer in `.svg/Problem.svg` so the scratching motion again moves the full arm.
+- Left the existing finger squeeze details, slower question reveal loop, and brand recoloring unchanged.
+
+### Limited problem SVG scratch motion to fingers
+- Removed the scratch animation from the full reused hand/arm layer so the sleeve and arm stay still.
+- Added subtle squeeze animation only to the skin hand/finger paths in `.svg/Problem.svg`.
+- Kept the slower question reveal loop and green plant with purple pot treatment unchanged.
+
+### Tuned problem SVG animation details
+- Slowed the problem SVG question/reveal animation from the original rapid pop-in timing to a calmer four-second loop.
+- Added subtle motion to the existing hand layer so the human reads as scratching their head.
+- Restored the plant leaves to green while keeping the pot in the Sarah purple-pink brand palette.
+
+### Cleaned and brand-recolored problem SVG
+- Replaced the composed problem illustration with the provided Downloads SVG as the direct section asset, removing the added story overlays.
+- Removed only the original gear group from `.svg/Problem.svg` and recolored the illustration accents into the Sarah purple-pink brand palette.
+- Updated the problem section image alt text and dimensions to match the cleaned `300x274` SVG.
+
+### Replaced problem illustration with provided SVG story scene
+- Rebuilt `.svg/Problem.svg` around the provided Downloads SVG, preserving the laptop worker as the agent while adding buyer inquiry, agent reply, buyer fade-away, no-reply, waiting, and clock animations.
+- Added visible confusion cues on the agent with raised brows, a worried mouth, and animated question marks so the scene better supports "First they contact. Then they ignore."
+- Updated the problem section image alt text to describe the confused-agent ghosting scene while keeping the existing section layout and image dimensions stable.
+
+### Improved problem section illustration story
+- Replaced the dashboard-like `.svg/Problem.svg` with a more human animated scene showing a buyer contacting an agent, receiving details, then fading away without replying.
+- Added calmer looping motion for the inquiry, agent response, buyer fade-out, no-reply trail, and time-passing clock while keeping the site's purple-pink palette.
+- Updated the problem section image alt text to describe the new buyer-agent ghosting scene.
+
+### Rebuilt problem section with new copy and animated SVG
+- Replaced the card-based problem section copy with "First they contact. Then they ignore." and emphasized "Then they ignore." with the existing gradient text treatment.
+- Removed the "THE PROBLEM" label, four problem cards, and quote box to make the section a focused text-and-visual story.
+- Added `.svg/Problem.svg`, a custom looping SVG that shows an inquiry appearing, the team waiting, and the buyer conversation fading away in the site's purple-pink palette.
+
+### Added reveal animation to hero SVG
+- Wrapped the hero SVG visual in the existing `Reveal` component so it fades/slides in with the headline and subheadline.
+- Delayed the hero CTA reveal slightly so the mobile/tablet sequence remains headline, subheadline, SVG, then button.
+
+### Corrected hero font, subheadline contrast, and mobile order
+- Explicitly pinned the hero headline and subheadline to Plus Jakarta Sans, matching the restored global site font.
+- Changed the hero subheadline normal text from slightly muted to fully dark foreground text while keeping the gradient only on `"is this still available?"`.
+- Updated mobile/tablet hero ordering to headline, subheadline, SVG, then button.
+
+### Reverted site font and improved hero subheadline readability
+- Reverted the global site font from Manrope back to Plus Jakarta Sans by updating the root Google Fonts link and `src/styles.css` font stack.
+- Increased the hero subheadline size, darkened its normal text, and kept the gradient effect on only `"is this still available?"` for better readability.
+
+### Updated hero copy, layout, and site font
+- Changed the hero headline to "Did you hire agents to close deals?" with the existing gradient effect applied to "close deals?" and updated the subheadline with gradient emphasis on `"is this still available?"`.
+- Reworked the hero layout so desktop shows copy and CTA on the left with the SVG on the right, while mobile/tablet orders content as headline, SVG, subheadline, then button.
+- Switched the global site font from Plus Jakarta Sans to Manrope by updating the root font preload/link and `src/styles.css` font stack.
+
 ### Replaced hero artwork with provided animated SVG
 - Replaced `.svg/Hero.svg` with the provided `C:\Users\Amrit\Downloads\Hero.svg` asset so the hero uses the new animated illustration while keeping the existing import path.
 - Updated `src/components/sarah/Hero.tsx` image sizing and alt text for the new square `512x512` SVG without changing the hero copy, CTA, or surrounding sections.
