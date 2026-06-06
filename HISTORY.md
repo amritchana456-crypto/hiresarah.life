@@ -9,7 +9,8 @@ A running log of work done in this repository. Updated each session so context s
 ### Replaced the Speed card illustration with catch SVG
 - Copied the provided `C:\Users\Amrit\Downloads\catch.svg` asset into the repo as `.svg/SpeedCatch.svg`, preserving its animation while recoloring the bright cyan/blue/green/orange/red accent palette into Sarah purple, lavender, and pink tones.
 - Updated `src/components/sarah/WhyIgnored.tsx` so the "Someone else got there first." card uses `.svg/SpeedCatch.svg` instead of the previous `.svg/SpeedAgent.svg` illustration, while keeping the current card layout, lightning icon badge, and text treatment.
-- Reframed `.svg/SpeedCatch.svg` around the visible fishing action and filled its empty lower-detail placeholder groups so the character no longer appears as a tiny partial torso in the card.
+- Restored `.svg/SpeedCatch.svg` from the original asset after removing the experimental wrapper/custom placeholder artwork, then reframed the real SVG content with a conservative `viewBox` crop and matching image metadata.
+- Embedded the exact leg/shoe and bucket/pail image assets from the provided Lottie JSON into the original empty `foot` and `ember` SVG placeholders, replacing the earlier manual placeholder drawings while preserving the existing SVG animation.
 
 ### Swapped illustrated assets across the "Why do people ignore?" cards
 - Copied the provided `C:\Users\Amrit\Downloads\options.svg` asset into the repo as `.svg/LowIntentOptions.svg`, recoloring its teal/green/cyan, red/yellow, and beige palette into Sarah purple/pink, warm skin, and soft neutral tones while preserving dark outlines and animation.

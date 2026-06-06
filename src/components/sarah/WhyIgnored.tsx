@@ -58,8 +58,8 @@ function ReasonCard({ reason }: { reason: Reason }) {
       ? {
           src: speedCatchSvg,
           imageClassName: "h-full w-full object-contain p-0.5",
-          width: 600,
-          height: 400,
+          width: 370,
+          height: 285,
         }
       : reason.title === "Low intent"
         ? {
