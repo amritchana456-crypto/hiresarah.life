@@ -6,6 +6,10 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Updated "Why do people ignore?" section headline and card text placement
+- Changed the section headline to "Your team replied. They were never buying" and removed the supporting line "It's rarely about your message."
+- Reworked the illustrated reason cards so each icon and bold sentence sits centered at the bottom of the card, while preserving the existing SVG visuals and card structure.
+
 ### Replaced the Speed card illustration with catch SVG
 - Copied the provided `C:\Users\Amrit\Downloads\catch.svg` asset into the repo as `.svg/SpeedCatch.svg`, preserving its animation while recoloring the bright cyan/blue/green/orange/red accent palette into Sarah purple, lavender, and pink tones.
 - Updated `src/components/sarah/WhyIgnored.tsx` so the "Someone else got there first." card uses `.svg/SpeedCatch.svg` instead of the previous `.svg/SpeedAgent.svg` illustration, while keeping the current card layout, lightning icon badge, and text treatment.

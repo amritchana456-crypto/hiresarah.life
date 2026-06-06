@@ -79,7 +79,7 @@ function ReasonCard({ reason }: { reason: Reason }) {
 
   if (illustratedReason) {
     return (
-      <div className="h-full rounded-[26px] border border-border-soft bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card sm:p-5 lg:p-6">
+      <div className="flex h-full flex-col rounded-[26px] border border-border-soft bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card sm:p-5 lg:p-6">
         <div className="flex h-48 items-center justify-center overflow-hidden rounded-[22px] bg-gradient-to-br from-primary-softer via-white to-pink-soft sm:h-36 lg:h-44">
           <img
             src={illustratedReason.src}
@@ -90,11 +90,11 @@ function ReasonCard({ reason }: { reason: Reason }) {
             height={illustratedReason.height}
           />
         </div>
-        <div className="mt-6 flex items-start gap-4">
+        <div className="mt-auto flex flex-col items-center gap-3 pt-6 text-center">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-white">
             <reason.Icon className="h-[22px] w-[22px]" />
           </div>
-          <div className="min-w-0 pt-0.5 text-left">
+          <div className="min-w-0">
             <p className="text-[16px] font-bold leading-snug text-foreground sm:text-[15px] lg:text-[16px]">
               {reason.text}
             </p>
@@ -130,13 +130,8 @@ export function WhyIgnored() {
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <h2 className="text-[36px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[48px]">
-              Why do people <span className="text-gradient">ignore?</span>
+              Your team replied. <span className="text-gradient">They were never buying</span>
             </h2>
-          </Reveal>
-          <Reveal delay={80}>
-            <p className="mt-5 text-[16.5px] leading-relaxed text-muted-foreground">
-              It's rarely about your message.
-            </p>
           </Reveal>
         </div>
 
