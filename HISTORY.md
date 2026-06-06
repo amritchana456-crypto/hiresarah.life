@@ -4,6 +4,25 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-06
+
+### Replaced hero artwork with provided animated SVG
+- Replaced `.svg/Hero.svg` with the provided `C:\Users\Amrit\Downloads\Hero.svg` asset so the hero uses the new animated illustration while keeping the existing import path.
+- Updated `src/components/sarah/Hero.tsx` image sizing and alt text for the new square `512x512` SVG without changing the hero copy, CTA, or surrounding sections.
+
+## 2026-06-05 (session 2)
+
+### Replaced HeroVisual JSX component with Hero.svg
+- Created `.svg/Hero.svg` — a hand-crafted SVG (viewBox 0 0 560 620) replicating the entire 5-card hero visual cluster previously rendered as React JSX.
+  - Cards included: main chat card, lead profile card, CRM saved badge, "Replies in seconds" pill, booking mini card.
+  - All colors hardcoded from CSS token values in `src/styles.css` (gradients, glass fills, shadows).
+  - SMIL `<animateTransform>` used to replicate `float-slow` (6s), `float-slower` (8s), and delayed variants so cards float without CSS.
+  - `feDropShadow` SVG filters approximate the `shadow-card` utility.
+- Modified `src/components/sarah/Hero.tsx`:
+  - Removed the `HeroVisual` function entirely.
+  - Added `import heroSvg from "../../../.svg/Hero.svg"`.
+  - Replaced `<HeroVisual />` with `<img src={heroSvg} width={560} height={620} className="w-full h-auto" />`.
+
 ## 2026-06-05
 
 ### Initialized CLAUDE.md
