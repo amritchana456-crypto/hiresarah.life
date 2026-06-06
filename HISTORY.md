@@ -6,12 +6,49 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Replaced the Speed card illustration with catch SVG
+- Copied the provided `C:\Users\Amrit\Downloads\catch.svg` asset into the repo as `.svg/SpeedCatch.svg`, preserving its animation while recoloring the bright cyan/blue/green/orange/red accent palette into Sarah purple, lavender, and pink tones.
+- Updated `src/components/sarah/WhyIgnored.tsx` so the "Someone else got there first." card uses `.svg/SpeedCatch.svg` instead of the previous `.svg/SpeedAgent.svg` illustration, while keeping the current card layout, lightning icon badge, and text treatment.
+- Reframed `.svg/SpeedCatch.svg` around the visible fishing action and filled its empty lower-detail placeholder groups so the character no longer appears as a tiny partial torso in the card.
+
+### Swapped illustrated assets across the "Why do people ignore?" cards
+- Copied the provided `C:\Users\Amrit\Downloads\options.svg` asset into the repo as `.svg/LowIntentOptions.svg`, recoloring its teal/green/cyan, red/yellow, and beige palette into Sarah purple/pink, warm skin, and soft neutral tones while preserving dark outlines and animation.
+- Updated `src/components/sarah/WhyIgnored.tsx` so all three reason cards now use the same illustrated-card structure: Speed uses `.svg/SpeedAgent.svg`, Low intent uses `.svg/LowIntentOptions.svg`, and Comparing uses the previous `.svg/LowIntentPerson.svg`.
+- Removed the visible card title labels ("Speed", "Low intent", "Comparing") and promoted each body sentence into the main card text with dark bold styling beside the circular icon badge.
+- Fixed the `LowIntentOptions.svg` namespace declaration so its internal `xlink:href` references render instead of showing a broken-image placeholder.
+- Fixed the Low intent SVG's internal monitor animation by clipping the scrolling people to the screen area and removing duplicate screen-fill layers that were covering the animation.
+
+### Added brand-colored real-estate agent SVG to the "Speed" card
+- Copied the provided `C:\Users\Amrit\Downloads\real estate agent.svg` asset into the repo as `.svg/SpeedAgent.svg`, preserving its existing SVG animation and using a repo-local import.
+- Recolored the asset into the Sarah palette: navy/blue/teal real-estate object colors now use Sarah purple tones, red/orange clothing and accent colors now use pink/purple tones, and neutral grays now use softer lavender/white fills while preserving skin tones and core dark details.
+- Updated `src/components/sarah/WhyIgnored.tsx` so the "Speed" card now uses the same illustrated-card structure as "Low intent": top SVG visual, then the existing circular lightning icon left-aligned beside the title and body copy.
+- Left the "Comparing" card on the compact icon/title/text layout.
+
+### Rebalanced Problem section columns so the two-line headline fits
+- `src/components/sarah/Problem.tsx`: kept the existing headline font sizes unchanged, widened the desktop text column from the original `0.92fr 1.08fr` layout to `1.08fr 0.92fr`, and reduced the problem SVG wrapper cap from `max-w-[620px]` to `max-w-[520px]`.
+- This keeps "First people text." and "Then they ignore." in the intended two-line format while allowing the illustration to stay as large as the adjusted text width can safely support.
+
+### Updated Problem section headline to shorter two-line copy
+- `src/components/sarah/Problem.tsx`: changed the headline to "First people text." followed by the gradient-emphasized "Then they ignore." so the section lands faster and removes the intermediate "They reply with links." line.
+
+### Added brand-colored person-thinking SVG to the "Low intent" card
+- Copied the provided `C:\Users\Amrit\Downloads\personthinking.svg` asset into the repo as `.svg/LowIntentPerson.svg` so the app no longer depends on a local Downloads path.
+- Recolored the SVG's off-brand accent palette while preserving the original animation, skin tones, and dark illustration details: teal/blue clothing accents now use Sarah purple tones, red question marks/dots now use Sarah pink, and cream clothing fills now use soft white.
+- Updated `src/components/sarah/WhyIgnored.tsx` so only the "Low intent" card gets the richer layout: the SVG renders first, then the existing Low intent circular icon stays left-aligned beside the title/body copy on the right.
+- Kept the Speed and Comparing cards on the existing compact card layout and made the reason-card `Reveal` wrappers full-height so the three-card row stays aligned across responsive breakpoints.
+
 ### Replaced "Daily frustration" timeline section with "Why do people ignore?" cards section
 - Removed `src/components/sarah/Frustration.tsx` (the 5-step inquiry timeline) and added `src/components/sarah/WhyIgnored.tsx` in its place; updated the import/usage in `src/routes/index.tsx` (`Frustration` → `WhyIgnored`, `id="frustration"` → `id="why-ignored"`; confirmed via grep that no navbar anchor referenced `#frustration`).
 - New section opens with the locked headline "Why do people **ignore**?" (gradient on "ignore"), no eyebrow label (kept Problem-section-style minimalism), then a 3-card grid (`grid-cols-1 sm:grid-cols-3`) covering the three reasons — Speed ("Someone else got there first."), Low intent ("They were just checking. Not serious."), Comparing ("They were exploring options.") — using the same numbered gradient-circle badge motif as the old timeline's step markers.
 - Closes with a bridge card (reusing Frustration's "highlight card" shadow/border treatment) that pivots toward the next section's positioning: "**Elite agencies** don't lose them to any of this. They reply instantly, qualify automatically, and never let a serious buyer slip through." — frames the product as how top agencies operate rather than a direct sales pitch, setting up `HowSarahHelps` which follows immediately.
 - Kept the soft purple ambient blob background, `py-28 sm:py-36` spacing, `max-w-[1240px]` container, `.text-gradient` accents, and `Reveal` stagger choreography for visual/brand continuity with the section it replaced and its neighbors.
 - Verified via SSR fetch of the dev server (`localhost:8081`) that all new copy renders under `id="why-ignored"`, no remnants of "Daily frustration"/`Frustration` remain, and the page returns HTTP 200 with no server errors.
+
+### Replaced numbered badges with brand icons in "Why do people ignore?" cards — `src/components/sarah/WhyIgnored.tsx`
+- User supplied three reference SVGs (lightning bolt, comparison shapes, thinking-character illustration) and asked for matching icons; the originals didn't fit (off-brand blue gradient, mismatched detail levels, one was a 3710×3710 animated character illustration too heavy for a ~44px badge).
+- Instead, generated three new minimal stroke-based line-icon SVG components inline (`SpeedIcon`, `LowIntentIcon`, `ComparingIcon`) matching the existing `Logo.tsx` icon conventions (`stroke="currentColor"`, `strokeWidth="2.2"`, white-on-`bg-gradient-primary` circle, no embedded animation): a lightning bolt for Speed, a thought-bubble-with-dots for Low intent, and two overlapping circles for Comparing.
+- Replaced the `{i + 1}` numbered badge markup with `<r.Icon className="h-[22px] w-[22px]" />` inside the same `h-11 w-11 rounded-full bg-gradient-primary` container, keeping sizing/spacing/shadow identical.
+- Verified via curl against the dev server (`localhost:8082`) that the new `SpeedIcon` path renders in the served HTML.
 
 ### Revised Problem section headline copy to third-person framing
 - `src/components/sarah/Problem.tsx`: changed the three-beat headline from "First people contact." / "You reply, send links." / "**They ignore.**" to "People contact them." / "They reply with links." / "**Then get ignored.**" — keeps a consistent third-person POV throughout (sets up framing the page around how "elite agencies" handle this, vs. addressing the reader directly) and resolves the dangling verb in "They ignore" by giving the letdown an explicit object ("get ignored").
