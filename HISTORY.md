@@ -6,6 +6,16 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Replaced "Daily frustration" timeline section with "Why do people ignore?" cards section
+- Removed `src/components/sarah/Frustration.tsx` (the 5-step inquiry timeline) and added `src/components/sarah/WhyIgnored.tsx` in its place; updated the import/usage in `src/routes/index.tsx` (`Frustration` → `WhyIgnored`, `id="frustration"` → `id="why-ignored"`; confirmed via grep that no navbar anchor referenced `#frustration`).
+- New section opens with the locked headline "Why do people **ignore**?" (gradient on "ignore"), no eyebrow label (kept Problem-section-style minimalism), then a 3-card grid (`grid-cols-1 sm:grid-cols-3`) covering the three reasons — Speed ("Someone else got there first."), Low intent ("They were just checking. Not serious."), Comparing ("They were exploring options.") — using the same numbered gradient-circle badge motif as the old timeline's step markers.
+- Closes with a bridge card (reusing Frustration's "highlight card" shadow/border treatment) that pivots toward the next section's positioning: "**Elite agencies** don't lose them to any of this. They reply instantly, qualify automatically, and never let a serious buyer slip through." — frames the product as how top agencies operate rather than a direct sales pitch, setting up `HowSarahHelps` which follows immediately.
+- Kept the soft purple ambient blob background, `py-28 sm:py-36` spacing, `max-w-[1240px]` container, `.text-gradient` accents, and `Reveal` stagger choreography for visual/brand continuity with the section it replaced and its neighbors.
+- Verified via SSR fetch of the dev server (`localhost:8081`) that all new copy renders under `id="why-ignored"`, no remnants of "Daily frustration"/`Frustration` remain, and the page returns HTTP 200 with no server errors.
+
+### Revised Problem section headline copy to third-person framing
+- `src/components/sarah/Problem.tsx`: changed the three-beat headline from "First people contact." / "You reply, send links." / "**They ignore.**" to "People contact them." / "They reply with links." / "**Then get ignored.**" — keeps a consistent third-person POV throughout (sets up framing the page around how "elite agencies" handle this, vs. addressing the reader directly) and resolves the dangling verb in "They ignore" by giving the letdown an explicit object ("get ignored").
+
 ### Reworked Problem section headline into a three-beat line
 - `src/components/sarah/Problem.tsx`: changed the headline from "First they contact. **Then they ignore.**" to three explicit lines — "First people contact." / "You reply, send links." / "**They ignore.**" — moving the `text-gradient` accent span to the final line so the irony lands on the punchline. Spells out the wasted reply/link-sending effort referenced by the subheading below it.
 

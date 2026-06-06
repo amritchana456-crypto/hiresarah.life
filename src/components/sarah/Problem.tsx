@@ -8,11 +8,11 @@ export function Problem() {
         <div className="relative z-10">
           <Reveal>
             <h2 className="max-w-2xl text-[38px] font-extrabold leading-[1.08] text-foreground sm:text-[52px] lg:text-[64px]">
-              First people contact.
+              People contact them.
               <br />
-              You reply, send links.
+              They reply with links.
               <br />
-              <span className="text-gradient">They ignore.</span>
+              <span className="text-gradient">Then get ignored.</span>
             </h2>
           </Reveal>
           <Reveal delay={120}>
