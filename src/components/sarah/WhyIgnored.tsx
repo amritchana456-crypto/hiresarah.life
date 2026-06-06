@@ -90,11 +90,11 @@ function ReasonCard({ reason }: { reason: Reason }) {
             height={illustratedReason.height}
           />
         </div>
-        <div className="mt-auto flex flex-col items-center gap-3 pt-6 text-center">
+        <div className="mt-auto flex items-center gap-4 pt-6">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-white">
             <reason.Icon className="h-[22px] w-[22px]" />
           </div>
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1 text-center">
             <p className="text-[16px] font-bold leading-snug text-foreground sm:text-[15px] lg:text-[16px]">
               {reason.text}
             </p>

@@ -6,6 +6,9 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-06
 
+### Changed reason-card icon/text row from stacked to icon-left layout
+- `src/components/sarah/WhyIgnored.tsx`: changed the icon+caption row in each illustrated `ReasonCard` (Speed, Low intent, Comparing) from a vertical `flex-col items-center text-center` stack back to a horizontal row (`flex items-center gap-4`), with the round icon badge pinned to the left (`shrink-0`) and the caption text in a `flex-1 text-center` wrapper so it's horizontally centered in the remaining space to the icon's right, vertically aligned with it. The illustration image on top of each card is unchanged.
+
 ### Updated "Why do people ignore?" section headline and card text placement
 - Changed the section headline to "Your team replied. They were never buying" and removed the supporting line "It's rarely about your message."
 - Reworked the illustrated reason cards so each icon and bold sentence sits centered at the bottom of the card, while preserving the existing SVG visuals and card structure.
