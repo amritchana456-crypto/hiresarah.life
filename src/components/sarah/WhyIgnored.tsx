@@ -51,6 +51,12 @@ const reasons = [
   { title: "Comparing", text: "They were exploring options.", Icon: ComparingIcon },
 ];
 
+const elitePoints = [
+  "They don’t waste top agents on window shoppers.",
+  "They don’t wait until morning to reply.",
+  "They don’t let a flooded inbox kill a deal.",
+];
+
 type Reason = (typeof reasons)[number];
 
 function ReasonCard({ reason }: { reason: Reason }) {
@@ -147,21 +153,52 @@ export function WhyIgnored() {
 
         {/* Bridge card */}
         <Reveal delay={300}>
-          <div className="relative mx-auto mt-16 max-w-4xl overflow-hidden rounded-[36px] bg-gradient-primary p-10 shadow-float sm:p-14">
-            <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
-            <div aria-hidden className="pointer-events-none absolute -left-10 -bottom-10 h-56 w-56 rounded-full bg-pink/40 blur-3xl" />
-            <div className="relative grid grid-cols-1 items-center gap-8 sm:grid-cols-2 sm:gap-10">
-              <p className="text-[20px] font-bold leading-snug text-white text-center sm:text-[26px] sm:text-left">
-                Top agencies stopped losing buyers the day they hired Sarah.
-              </p>
-              <img
-                src={realEstateSvg}
-                alt=""
-                aria-hidden
-                className="mx-auto h-auto w-full max-w-[320px] object-contain sm:max-w-none"
-                width={3200}
-                height={2000}
-              />
+          <div className="relative mx-auto mt-16 max-w-5xl overflow-hidden rounded-[32px] border border-border-soft bg-white p-6 shadow-card sm:p-8 lg:p-10">
+            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
+              <div className="mx-auto max-w-[500px] text-center lg:mx-0 lg:text-left">
+                <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
+                  What top teams do differently
+                </span>
+                <h3 className="mt-4 text-[32px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[42px] lg:text-[46px]">
+                  Elite managers don’t let this happen.
+                </h3>
+
+                <ul className="mt-7 space-y-4 text-left">
+                  {elitePoints.map((point) => (
+                    <li key={point} className="flex items-start gap-3">
+                      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-white shadow-soft">
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden
+                        >
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                      </span>
+                      <span className="text-[15.5px] font-semibold leading-relaxed text-foreground sm:text-[16.5px]">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex min-h-[260px] items-center justify-center overflow-hidden rounded-[26px] border border-border-soft bg-gradient-to-br from-primary-softer via-white to-pink-soft p-5 sm:min-h-[320px] sm:p-7 lg:min-h-[360px]">
+                <img
+                  src={realEstateSvg}
+                  alt=""
+                  aria-hidden
+                  className="h-auto w-full max-w-[420px] object-contain lg:max-w-[500px]"
+                  width={3200}
+                  height={2000}
+                />
+              </div>
             </div>
           </div>
         </Reveal>

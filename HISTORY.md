@@ -4,6 +4,12 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-07
+
+### Redesigned the "Why do people ignore?" bridge card
+- `src/components/sarah/WhyIgnored.tsx`: replaced the saturated gradient bridge panel with a quieter white card, left-side "Elite managers don't let this happen." copy, three gradient-check checklist rows, and the existing real-estate SVG inside a soft-gradient visual frame matching the reason-card image backgrounds.
+- Done to make the bridge feel like a calmer proof/standards section while preserving the final CTA as the page's strongest gradient conversion moment.
+
 ## 2026-06-06
 
 ### Swapped the bridge card illustration for a new brand-recolored "handshake" SVG
