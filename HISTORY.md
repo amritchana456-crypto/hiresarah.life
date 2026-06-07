@@ -6,6 +6,26 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-07
 
+### Hero mobile/tablet layout adjustments
+- `src/components/sarah/Hero.tsx`: subheadline now breaks into two lines on mobile/tablet only (lg:hidden br); reduced grid gap from gap-7/sm:gap-9 to gap-4/sm:gap-5 on mobile/tablet to pull SVG and CTA closer to the subheadline. Desktop unchanged.
+
+### Minor hero and problem copy tweaks
+- `src/components/sarah/Hero.tsx`: added "But" to subheadline ("But they're answering useless questions from people who never buy."); removed the "Only 3 agency managers" line below the CTA button.
+- `src/components/sarah/Problem.tsx`: subheadline changed to "And your team spends 30 minutes talking to them."
+
+### Updated Problem section copy
+- `src/components/sarah/Problem.tsx`: headline changed to "First they text. / Then they ignore." with gradient on "Then they ignore."; subheadline changed to "30 minutes of your team's time. Every single time."
+
+### Updated WhyIgnored section copy
+- `src/components/sarah/WhyIgnored.tsx`: changed headline to "They looked like leads. But they weren't." with gradient on "But they weren't."; updated three card texts to "Already working with another agent.", "Just browsing. Never buying.", "Comparing options. Not choosing you."; updated internal title keys for code readability.
+
+### Updated hero headline and subheadline (second pass)
+- `src/components/sarah/Hero.tsx`: headline changed to "Your agents should be closing deals." (gradient on "closing deals."); subheadline changed to "They're answering useless questions from people who never buy." (gradient on "from people who never buy.").
+
+### Updated hero and problem section copy
+- `src/components/sarah/Hero.tsx`: changed headline to "Your agents are busy. / Just not closing deals." with gradient on second line; changed subheadline to "They're stuck answering the same useless questions. / From people who never buy." with gradient on last line.
+- `src/components/sarah/Problem.tsx`: changed heading to "Most of those people were never real." with gradient on "were never real."; updated subtext to "And every time your team wastes 30 minutes finding that out." (also fixed grammar: waste → wastes).
+
 ### Refreshed the "How Sarah helps" card copy
 - `src/components/sarah/HowSarahHelps.tsx`: updated all six demo-card titles and descriptions with sharper elite-manager inquiry-handling copy, and synced the mini visual labels for under-7-second replies, matched property links, booked viewings, and right-agent routing.
 

@@ -9,18 +9,19 @@ export function Hero() {
       <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full bg-primary-soft blur-3xl opacity-60" />
       <div aria-hidden className="pointer-events-none absolute top-20 right-0 h-[400px] w-[400px] rounded-full bg-pink-soft blur-3xl opacity-50" />
 
-      <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-7 px-5 sm:px-8 sm:gap-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 lg:px-10 xl:gap-12">
+      <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-4 px-5 sm:px-8 sm:gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 lg:px-10 xl:gap-12">
         <div className="contents lg:block lg:max-w-[650px]">
           <Reveal className="order-1 relative z-10">
             <h1 className="mt-2 text-[42px] font-extrabold leading-[1.06] text-foreground sm:text-[58px] lg:mt-0 lg:text-[72px]">
-              Did you hire agents to{" "}
-              <span className="whitespace-nowrap text-gradient font-extrabold">close deals?</span>
+              Your agents should be{" "}
+              <span className="text-gradient font-extrabold">closing deals.</span>
             </h1>
           </Reveal>
           <Reveal delay={160} className="order-2 relative z-10 lg:mt-6">
             <p className="max-w-xl text-[18px] font-medium leading-relaxed text-foreground sm:text-[20px] lg:text-[22px]">
-              Or to answer the same questions{" "}
-              <span className="text-gradient">40 times a day.</span>
+              But they're answering useless questions…
+              <br />
+              <span className="text-gradient">from people who never buy.</span>
             </p>
           </Reveal>
 
@@ -29,10 +30,6 @@ export function Hero() {
               Hire Sarah for 3 days free
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </Button>
-            <div className="flex items-center gap-2 text-[13px] text-muted-foreground">
-              <span className="inline-flex h-2 w-2 rounded-full bg-green animate-pulse-dot" />
-              Only 3 agency managers can test Sarah free.
-            </div>
           </Reveal>
         </div>
 

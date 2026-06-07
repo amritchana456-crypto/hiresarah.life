@@ -46,9 +46,9 @@ function ComparingIcon({ className = "" }: { className?: string }) {
 }
 
 const reasons = [
-  { title: "Speed", text: "Someone else got there first.", Icon: SpeedIcon },
-  { title: "Low intent", text: "They were just checking. Not serious.", Icon: LowIntentIcon },
-  { title: "Comparing", text: "They were exploring options.", Icon: ComparingIcon },
+  { title: "Speed", text: "Already working with another agent.", Icon: SpeedIcon },
+  { title: "Low intent", text: "Just browsing. Never buying.", Icon: LowIntentIcon },
+  { title: "Comparing", text: "Comparing options. Not choosing you.", Icon: ComparingIcon },
 ];
 
 const elitePoints = [
@@ -175,7 +175,7 @@ export function WhyIgnored() {
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <h2 className="text-[36px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[48px]">
-              Your team replied. <span className="text-gradient">They were never buying</span>
+              They looked like leads.{" "}<span className="text-gradient">But they weren't.</span>
             </h2>
           </Reveal>
         </div>
