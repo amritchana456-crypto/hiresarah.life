@@ -1,5 +1,5 @@
+import { useEffect, useRef } from "react";
 import { Reveal } from "./Reveal";
-import realEstateSvg from "../../../.svg/RealEstate.svg";
 import lowIntentOptionsSvg from "../../../.svg/LowIntentOptions.svg";
 import lowIntentPersonSvg from "../../../.svg/LowIntentPerson.svg";
 import speedCatchSvg from "../../../.svg/SpeedCatch.svg";
@@ -58,6 +58,44 @@ const elitePoints = [
 ];
 
 type Reason = (typeof reasons)[number];
+
+function EliteManagersAnimation() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let destroyed = false;
+    let animation: { destroy: () => void } | undefined;
+
+    import("lottie-web/build/player/lottie_light").then((lottie) => {
+      if (destroyed || !containerRef.current) return;
+
+      animation = lottie.default.loadAnimation({
+        container: containerRef.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "/lottie/elite-managers.json",
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid meet",
+        },
+      });
+    });
+
+    return () => {
+      destroyed = true;
+      animation?.destroy();
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      data-lottie-elite
+      aria-hidden
+      className="h-full min-h-[220px] w-full max-w-[500px]"
+    />
+  );
+}
 
 function ReasonCard({ reason }: { reason: Reason }) {
   const illustratedReason =
@@ -160,11 +198,11 @@ export function WhyIgnored() {
                   What top teams do differently
                 </span>
                 <h3 className="mt-4 text-[32px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[42px] lg:text-[46px]">
-                  Elite managers don’t let this happen.
+                  <span className="text-gradient">Elite managers</span> don’t let this happen.
                 </h3>
 
                 <ul className="mt-7 space-y-4 text-left">
-                  {elitePoints.map((point) => (
+                  {elitePoints.map((point, i) => (
                     <li key={point} className="flex items-start gap-3">
                       <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-white shadow-soft">
                         <svg
@@ -173,12 +211,14 @@ export function WhyIgnored() {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          strokeWidth="2.8"
+                          strokeWidth="3"
                           strokeLinecap="round"
                           strokeLinejoin="round"
+                          className="animate-x-soft origin-center"
+                          style={{ animationDelay: `${i * 0.35}s` }}
                           aria-hidden
                         >
-                          <path d="M20 6 9 17l-5-5" />
+                          <path d="M6 6l12 12M18 6 6 18" />
                         </svg>
                       </span>
                       <span className="text-[15.5px] font-semibold leading-relaxed text-foreground sm:text-[16.5px]">
@@ -190,14 +230,7 @@ export function WhyIgnored() {
               </div>
 
               <div className="flex min-h-[260px] items-center justify-center overflow-hidden rounded-[26px] border border-border-soft bg-gradient-to-br from-primary-softer via-white to-pink-soft p-5 sm:min-h-[320px] sm:p-7 lg:min-h-[360px]">
-                <img
-                  src={realEstateSvg}
-                  alt=""
-                  aria-hidden
-                  className="h-auto w-full max-w-[420px] object-contain lg:max-w-[500px]"
-                  width={3200}
-                  height={2000}
-                />
+                <EliteManagersAnimation />
               </div>
             </div>
           </div>

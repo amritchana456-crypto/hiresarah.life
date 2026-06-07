@@ -10,6 +10,11 @@ A running log of work done in this repository. Updated each session so context s
 - `src/components/sarah/WhyIgnored.tsx`: replaced the saturated gradient bridge panel with a quieter white card, left-side "Elite managers don't let this happen." copy, three gradient-check checklist rows, and the existing real-estate SVG inside a soft-gradient visual frame matching the reason-card image backgrounds.
 - Done to make the bridge feel like a calmer proof/standards section while preserving the final CTA as the page's strongest gradient conversion moment.
 
+### Added branded Lottie animation and animated X badges to the bridge card
+- `package.json`/`package-lock.json`: added `lottie-web` so the provided JSON animation can play from its original Lottie keyframes.
+- `public/lottie/elite-managers.json`: copied the provided animation into the app and recolored non-skin accent/background tones into the Sarah purple/lavender/pink palette while preserving the original timing, transforms, and layer motion.
+- `src/components/sarah/WhyIgnored.tsx` and `src/styles.css`: replaced the static bridge SVG with a client-side SVG-rendered Lottie animation, changed the bridge headline gradient to emphasize "Elite managers", and swapped checklist badges for subtly looping white X icons in brand-gradient circles.
+
 ## 2026-06-06
 
 ### Swapped the bridge card illustration for a new brand-recolored "handshake" SVG
