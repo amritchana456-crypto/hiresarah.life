@@ -6,6 +6,14 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-07
 
+- `src/components/sarah/HowSarahHelps.tsx`: Rewrote all section copy and restructured layout
+  - Section heading: "This is what handles inquiries for them now." → "This is what catches leads before they disappear." (gradient on "before they disappear")
+  - Removed 6th card ("Routes to the right agent") — now 5 cards total
+  - Removed DemoVisual widgets, play buttons, and "Demo clip" badges from all cards
+  - Updated card titles and body copy: Replies in seconds / Filters out time-wasters instantly / Every real buyer is captured and tracked / Buyers get the right listings instantly / Viewings get booked while interest is still high
+  - Desktop layout: 6-column grid, top 3 cards fill row, bottom 2 cards centered (col-start-2 and col-start-4)
+  - Mobile: single column unchanged
+
 - `src/components/sarah/Hero.tsx`: Updated hero subheadline from "But your inbox is full of people who never will." to "Not chasing people who never buy."
 
 ## 2026-06-07
