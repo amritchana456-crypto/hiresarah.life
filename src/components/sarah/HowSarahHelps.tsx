@@ -15,22 +15,14 @@ export function HowSarahHelps() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-primary">How Sarah helps</span>
-          </Reveal>
-          <Reveal delay={80}>
-            <h2 className="mt-4 text-[36px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[48px]">
-              Sarah handles the first conversation, so your team can{" "}
-              <span className="text-gradient">handle the serious one.</span>
+            <h2 className="text-[36px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[48px]">
+              This is what{" "}
+              <span className="text-gradient">handles inquiries for them now.</span>
             </h2>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-5 text-[16.5px] leading-relaxed text-muted-foreground">
-              See exactly what Sarah does before you commit. Each clip below shows her working in real time.
-            </p>
           </Reveal>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3">
           {demos.map((d, i) => (
             <Reveal key={d.title} delay={(i % 3) * 80}>
               <article className="group h-full overflow-hidden rounded-[26px] border border-border-soft bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card">

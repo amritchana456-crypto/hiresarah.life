@@ -21,6 +21,15 @@ A running log of work done in this repository. Updated each session so context s
 ### Enlarged and centered the bridge Lottie on mobile
 - `src/components/sarah/WhyIgnored.tsx`: reduced only the mobile visual-frame padding, increased the mobile frame height slightly, and centered/scaled the Lottie animation on mobile while resetting scale at `sm` so tablet and desktop stay unchanged.
 
+### Reframed the "How Sarah helps" section headline
+- `src/components/sarah/HowSarahHelps.tsx`: removed the eyebrow and supporting paragraph, replaced the intro with "This is what handles inquiries when they can't." with gradient emphasis on "they can't.", and tightened the gap before the demo cards.
+
+### Updated the "How Sarah helps" headline to elite-manager framing
+- `src/components/sarah/HowSarahHelps.tsx`: changed the section headline to "This is how elite managers handle inquiries now." with gradient emphasis on "handle inquiries now."
+
+### Refined the "How Sarah helps" headline wording
+- `src/components/sarah/HowSarahHelps.tsx`: changed the section headline to "This is what handles inquiries for them now." with gradient emphasis on "handles inquiries for them now."
+
 ## 2026-06-06
 
 ### Swapped the bridge card illustration for a new brand-recolored "handshake" SVG
