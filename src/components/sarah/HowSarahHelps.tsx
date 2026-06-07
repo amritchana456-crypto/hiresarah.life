@@ -1,12 +1,36 @@
 import { Reveal } from "./Reveal";
 
 const demos = [
-  { title: "Replies in seconds", text: "Sarah answers new inquiries fast, even when your team is in showings, offline, on vacation, sick, or finished for the day.", visual: "chat" },
-  { title: "Qualifies the buyer", text: "Sarah asks for the important details: location, budget, timeline, property type, bedrooms, and viewing interest.", visual: "qual" },
-  { title: "Saves details automatically", text: "Once Sarah collects the details, the lead information is saved into the CRM without manual copying.", visual: "crm" },
-  { title: "Shares matching property links", text: "Instead of agents searching listings one by one, Sarah can present suitable property links directly in the chat.", visual: "listings" },
-  { title: "Books the next step", text: "When a buyer is ready, Sarah can show a booking link so they can schedule a call or viewing directly.", visual: "book" },
-  { title: "Routes leads to the right agent", text: "If a property belongs to a specific agent, Sarah can help route that buyer to the correct person.", visual: "route" },
+  {
+    title: "Replies under 7 seconds.",
+    text: "Late nights, vacations, packed schedules. It does not matter. Every inquiry is caught before the buyer has time to change their mind.",
+    visual: "chat",
+  },
+  {
+    title: "Answers and qualifies.",
+    text: "Budgets, timelines, locations. Sarah catches the details automatically, so agents can focus on real buyers instead of guessing intent.",
+    visual: "qual",
+  },
+  {
+    title: "No more manual data entry.",
+    text: "Clean lead data goes straight to your CRM, so no one is relying on late-night copy-paste or half-remembered chat notes.",
+    visual: "crm",
+  },
+  {
+    title: "Property links in 5 seconds.",
+    text: "No more searching listings one by one or manually sending links. Matching properties are surfaced while the conversation is still hot.",
+    visual: "listings",
+  },
+  {
+    title: "Meetings booked in the chat.",
+    text: "No endless back-and-forth trying to fix a calendar clash. Hot buyers can book a viewing while they are still ready to move.",
+    visual: "book",
+  },
+  {
+    title: "Routes to the right agent.",
+    text: "No manual routing mistakes. Verified inquiries land with the exact agent who owns the listing.",
+    visual: "route",
+  },
 ] as const;
 
 export function HowSarahHelps() {
@@ -26,11 +50,9 @@ export function HowSarahHelps() {
           {demos.map((d, i) => (
             <Reveal key={d.title} delay={(i % 3) * 80}>
               <article className="group h-full overflow-hidden rounded-[26px] border border-border-soft bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card">
-                {/* Gradient header strip */}
                 <div className="relative h-44 overflow-hidden bg-gradient-primary">
                   <div aria-hidden className="absolute inset-0 opacity-25" style={{ background: "radial-gradient(circle at 30% 20%, white, transparent 50%)" }} />
                   <DemoVisual kind={d.visual} />
-                  {/* Play overlay */}
                   <button
                     type="button"
                     aria-label={`Play demo: ${d.title}`}
@@ -61,7 +83,7 @@ function DemoVisual({ kind }: { kind: typeof demos[number]["visual"] }) {
       <div className={base}>
         <div className="flex items-center gap-2">
           <div className="h-1.5 w-1.5 rounded-full bg-green animate-pulse-dot" />
-          <p className="text-[10.5px] font-bold">Sarah · replied in 5s</p>
+          <p className="text-[10.5px] font-bold">Sarah replied under 7s</p>
         </div>
         <p className="mt-1.5 text-[11.5px] text-muted-foreground">"What's your budget and timeline?"</p>
       </div>
@@ -84,14 +106,14 @@ function DemoVisual({ kind }: { kind: typeof demos[number]["visual"] }) {
           <span className="flex h-4 w-4 items-center justify-center rounded-full bg-green/20"><span className="h-1.5 w-1.5 rounded-full bg-green" /></span>
           <p className="text-[10.5px] font-bold">CRM updated</p>
         </div>
-        <p className="mt-1 text-[11px] text-muted-foreground">4 fields auto-filled</p>
+        <p className="mt-1 text-[11px] text-muted-foreground">Clean fields saved</p>
       </div>
     );
   }
   if (kind === "listings") {
     return (
       <div className={base}>
-        <p className="text-[10px] font-bold uppercase tracking-wider text-pink">3 matches</p>
+        <p className="text-[10px] font-bold uppercase tracking-wider text-pink">3 matched links</p>
         <div className="mt-1.5 flex gap-1.5">
           {[0, 1, 2].map((i) => <div key={i} className="h-8 flex-1 rounded-md bg-gradient-to-br from-primary-soft to-pink-soft" />)}
         </div>
@@ -101,15 +123,15 @@ function DemoVisual({ kind }: { kind: typeof demos[number]["visual"] }) {
   if (kind === "book") {
     return (
       <div className={base}>
-        <p className="text-[10px] font-bold uppercase tracking-wider text-primary">Viewing</p>
-        <p className="mt-1 text-[12px] font-bold">Sat 14 · 3:00 PM</p>
+        <p className="text-[10px] font-bold uppercase tracking-wider text-primary">Viewing booked</p>
+        <p className="mt-1 text-[12px] font-bold">Sat 14 - 3:00 PM</p>
       </div>
     );
   }
   return (
     <div className={base}>
-      <p className="text-[10px] font-bold uppercase tracking-wider text-primary">Routed</p>
-      <p className="mt-1 text-[11.5px]">→ Agent Maya · Notting Hill</p>
+      <p className="text-[10px] font-bold uppercase tracking-wider text-primary">Right agent</p>
+      <p className="mt-1 text-[11.5px]">Agent Maya - Notting Hill</p>
     </div>
   );
 }
