@@ -15,6 +15,12 @@ A running log of work done in this repository. Updated each session so context s
 - `public/lottie/elite-managers.json`: copied the provided animation into the app and recolored non-skin accent/background tones into the Sarah purple/lavender/pink palette while preserving the original timing, transforms, and layer motion.
 - `src/components/sarah/WhyIgnored.tsx` and `src/styles.css`: replaced the static bridge SVG with a client-side SVG-rendered Lottie animation, changed the bridge headline gradient to emphasize "Elite managers", and swapped checklist badges for subtly looping white X icons in brand-gradient circles.
 
+### Tightened bridge card headline and X badge alignment
+- `src/components/sarah/WhyIgnored.tsx`: removed the "What top teams do differently" eyebrow, nudged the bridge text column slightly upward on desktop, reduced the headline-to-list spacing, and center-aligned each X badge with its sentence text for cleaner row alignment.
+
+### Enlarged and centered the bridge Lottie on mobile
+- `src/components/sarah/WhyIgnored.tsx`: reduced only the mobile visual-frame padding, increased the mobile frame height slightly, and centered/scaled the Lottie animation on mobile while resetting scale at `sm` so tablet and desktop stay unchanged.
+
 ## 2026-06-06
 
 ### Swapped the bridge card illustration for a new brand-recolored "handshake" SVG

@@ -92,7 +92,7 @@ function EliteManagersAnimation() {
       ref={containerRef}
       data-lottie-elite
       aria-hidden
-      className="h-full min-h-[220px] w-full max-w-[500px]"
+      className="flex h-full min-h-[220px] w-full max-w-[500px] scale-[1.14] items-center justify-center sm:scale-100"
     />
   );
 }
@@ -193,18 +193,15 @@ export function WhyIgnored() {
         <Reveal delay={300}>
           <div className="relative mx-auto mt-16 max-w-5xl overflow-hidden rounded-[32px] border border-border-soft bg-white p-6 shadow-card sm:p-8 lg:p-10">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
-              <div className="mx-auto max-w-[500px] text-center lg:mx-0 lg:text-left">
-                <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
-                  What top teams do differently
-                </span>
-                <h3 className="mt-4 text-[32px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[42px] lg:text-[46px]">
+              <div className="mx-auto max-w-[500px] text-center lg:mx-0 lg:-translate-y-3 lg:text-left">
+                <h3 className="text-[32px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[42px] lg:text-[46px]">
                   <span className="text-gradient">Elite managers</span> don’t let this happen.
                 </h3>
 
-                <ul className="mt-7 space-y-4 text-left">
+                <ul className="mt-5 space-y-3.5 text-left sm:mt-6">
                   {elitePoints.map((point, i) => (
-                    <li key={point} className="flex items-start gap-3">
-                      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-white shadow-soft">
+                    <li key={point} className="flex items-center gap-3">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-white shadow-soft">
                         <svg
                           width="15"
                           height="15"
@@ -221,7 +218,7 @@ export function WhyIgnored() {
                           <path d="M6 6l12 12M18 6 6 18" />
                         </svg>
                       </span>
-                      <span className="text-[15.5px] font-semibold leading-relaxed text-foreground sm:text-[16.5px]">
+                      <span className="text-[15.5px] font-semibold leading-snug text-foreground sm:text-[16.5px]">
                         {point}
                       </span>
                     </li>
@@ -229,7 +226,7 @@ export function WhyIgnored() {
                 </ul>
               </div>
 
-              <div className="flex min-h-[260px] items-center justify-center overflow-hidden rounded-[26px] border border-border-soft bg-gradient-to-br from-primary-softer via-white to-pink-soft p-5 sm:min-h-[320px] sm:p-7 lg:min-h-[360px]">
+              <div className="flex min-h-[280px] items-center justify-center overflow-hidden rounded-[26px] border border-border-soft bg-gradient-to-br from-primary-softer via-white to-pink-soft p-3 sm:min-h-[320px] sm:p-7 lg:min-h-[360px]">
                 <EliteManagersAnimation />
               </div>
             </div>
