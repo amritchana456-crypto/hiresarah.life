@@ -19,7 +19,7 @@ export function Hero() {
           </Reveal>
           <Reveal delay={160} className="order-2 relative z-10 lg:mt-6">
             <p className="max-w-xl text-[18px] font-medium leading-relaxed text-foreground sm:text-[20px] lg:text-[22px]">
-              But your inbox is full of people who never will.
+              Not chasing people who never buy.
             </p>
           </Reveal>
 

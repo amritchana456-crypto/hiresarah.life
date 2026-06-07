@@ -6,6 +6,10 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-07
 
+- `src/components/sarah/Hero.tsx`: Updated hero subheadline from "But your inbox is full of people who never will." to "Not chasing people who never buy."
+
+## 2026-06-07
+
 ### Updated copy across four landing page sections
 - **Hero.tsx**: Subheadline changed from "But they're answering useless questions… from people who never buy." to single-line "But your inbox is full of people who never will." (removed second span/line)
 - **Problem.tsx**: h2 changed from "First they text. / Then they ignore." to "First people text. / Then they disappear."; sub changed from "spends 30 minutes talking to them" to "spent 30 minutes talking to a ghost."
