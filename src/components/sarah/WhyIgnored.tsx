@@ -46,8 +46,8 @@ function ComparingIcon({ className = "" }: { className?: string }) {
 }
 
 const reasons = [
-  { title: "Speed", text: "Already working with another agent.", Icon: SpeedIcon },
-  { title: "Low intent", text: "Just browsing. Never buying.", Icon: LowIntentIcon },
+  { title: "Speed", text: "Another agency caught them before you did.", Icon: SpeedIcon },
+  { title: "Low intent", text: "They were just browsing.", Icon: LowIntentIcon },
   { title: "Comparing", text: "Comparing options. Not choosing you.", Icon: ComparingIcon },
 ];
 
@@ -175,7 +175,7 @@ export function WhyIgnored() {
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <h2 className="text-[36px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[48px]">
-              They looked like leads.{" "}<span className="text-gradient">But they weren't.</span>
+              They looked like a buyer.{" "}<span className="text-gradient">But they weren't, because...</span>
             </h2>
           </Reveal>
         </div>
@@ -195,7 +195,7 @@ export function WhyIgnored() {
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
               <div className="mx-auto max-w-[500px] text-center lg:mx-0 lg:-translate-y-3 lg:text-left">
                 <h3 className="text-[32px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[42px] lg:text-[46px]">
-                  <span className="text-gradient">Elite managers</span> don’t let this happen.
+                  <span className="text-gradient">Some managers</span> figured this out.
                 </h3>
 
                 <ul className="mt-5 space-y-3.5 text-left sm:mt-6">

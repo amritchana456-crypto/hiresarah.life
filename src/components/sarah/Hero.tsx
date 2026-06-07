@@ -19,9 +19,7 @@ export function Hero() {
           </Reveal>
           <Reveal delay={160} className="order-2 relative z-10 lg:mt-6">
             <p className="max-w-xl text-[18px] font-medium leading-relaxed text-foreground sm:text-[20px] lg:text-[22px]">
-              But they're answering useless questions…
-              <br />
-              <span className="text-gradient">from people who never buy.</span>
+              But your inbox is full of people who never will.
             </p>
           </Reveal>
 
