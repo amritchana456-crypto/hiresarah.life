@@ -12,6 +12,10 @@ A running log of work done in this repository. Updated each session so context s
 - **WhyIgnored.tsx**: h2 changed from "They looked like leads. But they weren't." to "They looked like a buyer. But they weren't, because..."; Card 1 text updated from "Already working with another agent." to "Another agency caught them before you did."; Card 2 text updated from "Just browsing. Never buying." to "They were just browsing."
 - **WhyIgnored.tsx**: Bridge card h3 changed from "Elite managers don't let this happen." to "Some managers figured this out." (gradient span updated, three bullet points kept as-is)
 
+### Updated bullet points + heading layout in WhyIgnored.tsx
+- `elitePoints` copy updated: "time-wasters", "replying instantly at 10:30 PM", "No message sits unanswered"
+- Heading "They looked like a buyer..." now renders two centered lines on desktop (`<br />` between sentences) and a comma-joined single flow on mobile via `sm:hidden` / `hidden sm:inline` spans; no SVGs touched
+
 
 
 ### Improved problem section illustration story

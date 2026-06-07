@@ -52,9 +52,9 @@ const reasons = [
 ];
 
 const elitePoints = [
-  "They don’t waste top agents on window shoppers.",
-  "They don’t wait until morning to reply.",
-  "They don’t let a flooded inbox kill a deal.",
+  "Their best agents don’t deal with time-wasters anymore.",
+  "They’re replying instantly, even at 10:30 PM.",
+  "No message sits unanswered anymore.",
 ];
 
 type Reason = (typeof reasons)[number];
@@ -174,8 +174,15 @@ export function WhyIgnored() {
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <h2 className="text-[36px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[48px]">
-              They looked like a buyer.{" "}<span className="text-gradient">But they weren't, because...</span>
+            <h2 className="text-[32px] font-extrabold leading-[1.15] tracking-tight text-foreground sm:text-[48px]">
+              <span className="sm:hidden">
+                They looked like a buyer, but{" "}
+                <span className="text-gradient">they weren't, because...</span>
+              </span>
+              <span className="hidden sm:inline">
+                They looked like a buyer.<br />
+                <span className="text-gradient">But they weren't, because...</span>
+              </span>
             </h2>
           </Reveal>
         </div>
