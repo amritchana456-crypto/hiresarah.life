@@ -21,6 +21,7 @@ A running log of work done in this repository. Updated each session so context s
 - `src/routes/index.tsx`, `src/components/sarah/Navbar.tsx`, `src/components/sarah/MobileMenu.tsx`, `src/components/sarah/Hero.tsx`, and `src/components/sarah/FounderCTA.tsx`: Wired Sarah CTA buttons to open the booking popup.
 - `src/components/sarah/FounderCTA.tsx`: Shortened the final CTA headline and subheadline for mobile clarity.
 - `src/components/sarah/Logo.tsx`: Replaced the sparkle mark with an animated code-built S monogram using Sarah's brand gradient.
+- `src/components/sarah/BookingModal.tsx`: Changed desktop booking popup to a guide-left/calendar-right layout with example field guidance.
 
 ## 2026-06-07
 

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Button } from "./Button";
 import { Logo } from "./Logo";
 
 const calendarSrc =
@@ -38,7 +37,7 @@ export function BookingModal({ open, onClose }: { open: boolean; onClose: () => 
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-title"
-        className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-[30px] border border-white/70 bg-white shadow-float"
+        className="relative flex max-h-[92vh] w-full max-w-7xl flex-col overflow-hidden rounded-[30px] border border-white/70 bg-white shadow-float"
       >
         <div className="flex items-start justify-between gap-4 border-b border-border-soft px-5 py-4 sm:px-7">
           <div className="min-w-0">
@@ -75,18 +74,48 @@ export function BookingModal({ open, onClose }: { open: boolean; onClose: () => 
           </button>
         </div>
 
-        <div className="bg-gradient-to-br from-primary-softer via-white to-pink-soft p-3 sm:p-5">
-          <div className="overflow-hidden rounded-[22px] border border-border-soft bg-white shadow-soft">
+        <div className="grid min-h-0 gap-3 bg-gradient-to-br from-primary-softer via-white to-pink-soft p-3 sm:p-5 lg:grid-cols-[0.36fr_0.64fr]">
+          <aside className="rounded-[22px] border border-white/70 bg-white/90 p-5 shadow-soft backdrop-blur lg:p-7">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary-softer px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">
+              <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
+              20-minute setup
+            </span>
+            <h3 className="mt-5 text-[26px] font-extrabold leading-[1.08] text-foreground lg:text-[32px]">
+              Tell us where Sarah should help first.
+            </h3>
+            <p className="mt-3 text-[14.5px] font-medium leading-relaxed text-muted-foreground">
+              The calendar collects the details. Use these examples if you are unsure what to write.
+            </p>
+
+            <dl className="mt-6 space-y-4">
+              {[
+                ["Role", "Agency manager, founder, sales lead"],
+                ["Agency name", "Your real estate agency"],
+                ["Main inquiry channel", "WhatsApp, portals, Instagram, website forms"],
+                ["Biggest inquiry problem", "Slow replies, weak leads, missed follow-ups"],
+              ].map(([label, example]) => (
+                <div key={label} className="rounded-2xl border border-border-soft bg-white p-4">
+                  <dt className="text-[13px] font-bold text-foreground">{label}</dt>
+                  <dd className="mt-1 text-[13.5px] leading-relaxed text-muted-foreground">
+                    {example}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <p className="mt-6 rounded-2xl bg-gradient-primary p-4 text-[13.5px] font-semibold leading-relaxed text-white shadow-soft">
+              Thanks. We&apos;ll review your workflow before the call.
+            </p>
+          </aside>
+
+          <div className="min-h-0 overflow-hidden rounded-[22px] border border-border-soft bg-white shadow-soft">
             <iframe
               src={calendarSrc}
               title="Sarah 3-Day Test Setup Call booking calendar"
-              className="h-[680px] w-full sm:h-[720px]"
+              className="h-[680px] w-full sm:h-[720px] lg:h-[760px]"
               style={{ border: 0 }}
             />
           </div>
-          <p className="px-2 pt-3 text-center text-[13px] font-medium text-muted-foreground">
-            Thanks. We&apos;ll review your workflow before the call.
-          </p>
         </div>
       </section>
     </div>
