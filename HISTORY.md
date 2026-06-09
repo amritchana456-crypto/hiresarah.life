@@ -22,6 +22,8 @@ A running log of work done in this repository. Updated each session so context s
 - `src/components/sarah/FounderCTA.tsx`: Shortened the final CTA headline and subheadline for mobile clarity.
 - `src/components/sarah/Logo.tsx`: Replaced the sparkle mark with an animated code-built S monogram using Sarah's brand gradient.
 - `src/components/sarah/BookingModal.tsx`: Changed desktop booking popup to a guide-left/calendar-right layout with example field guidance.
+- `src/components/sarah/Logo.tsx`: Reworked the animated mark into a taller interlocking S ribbon while keeping the Sarah gradient, subtle shimmer, and reduced-motion support.
+- `src/components/sarah/BookingModal.tsx`: Tightened the booking popup sizing, shortened the guide panel, reduced iframe height, and added a direct Google Calendar fallback link.
 
 ## 2026-06-07
 

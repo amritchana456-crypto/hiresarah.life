@@ -5,6 +5,7 @@ export function Logo({ className = "" }: { className?: string }) {
   const gradientId = `sarah-logo-gradient-${rawId}`;
   const glowId = `sarah-logo-glow-${rawId}`;
   const shineId = `sarah-logo-shine-${rawId}`;
+  const cutId = `sarah-logo-cut-${rawId}`;
 
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
@@ -17,9 +18,9 @@ export function Logo({ className = "" }: { className?: string }) {
           }
 
           @keyframes sarah-logo-shimmer {
-            0%, 100% { opacity: 0.18; transform: translateX(-10px); }
-            45% { opacity: 0.46; transform: translateX(10px); }
-            70% { opacity: 0.22; transform: translateX(16px); }
+            0%, 100% { opacity: 0.12; transform: translateX(-14px); }
+            46% { opacity: 0.34; transform: translateX(13px); }
+            72% { opacity: 0.16; transform: translateX(18px); }
           }
 
           .sarah-logo-mark {
@@ -42,20 +43,20 @@ export function Logo({ className = "" }: { className?: string }) {
       </style>
 
       <svg
-        viewBox="0 0 64 64"
+        viewBox="0 0 72 96"
         className="sarah-logo-mark h-9 w-9 shrink-0 overflow-visible"
         fill="none"
         aria-hidden="true"
       >
         <defs>
-          <linearGradient id={gradientId} x1="8" x2="56" y1="10" y2="54">
+          <linearGradient id={gradientId} x1="14" x2="58" y1="10" y2="86">
             <stop stopColor="#7357F6" />
-            <stop offset="0.48" stopColor="#8C5CF8" />
+            <stop offset="0.52" stopColor="#8C5CF8" />
             <stop offset="1" stopColor="#F45BD4" />
           </linearGradient>
-          <linearGradient id={shineId} x1="12" x2="52" y1="14" y2="50">
+          <linearGradient id={shineId} x1="18" x2="54" y1="12" y2="84">
             <stop stopColor="white" stopOpacity="0" />
-            <stop offset="0.52" stopColor="white" stopOpacity="0.72" />
+            <stop offset="0.5" stopColor="white" stopOpacity="0.58" />
             <stop offset="1" stopColor="white" stopOpacity="0" />
           </linearGradient>
           <filter id={glowId} x="-40%" y="-40%" width="180%" height="180%">
@@ -68,37 +69,40 @@ export function Logo({ className = "" }: { className?: string }) {
               floodOpacity="0.22"
             />
           </filter>
+          <mask id={cutId} maskUnits="userSpaceOnUse">
+            <rect width="72" height="96" fill="white" />
+            <path d="M22 33.5 50 61.5" stroke="black" strokeLinecap="round" strokeWidth="6.5" />
+          </mask>
         </defs>
 
-        <g filter={`url(#${glowId})`} strokeLinecap="round" strokeLinejoin="round">
+        <g
+          filter={`url(#${glowId})`}
+          mask={`url(#${cutId})`}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path
-            d="M40 9.5 55 24.5 44.5 35 29 19.5 20 28.5"
+            d="M42.5 9.5 58 25Q61.5 28.5 58 32L46 44Q42.5 47.5 39 44L29.5 34.5Q27.5 32.5 25.5 34.5L16 44"
             stroke={`url(#${gradientId})`}
-            strokeWidth="10"
+            strokeWidth="13"
           />
           <path
-            d="M24 54.5 9 39.5 19.5 29 35 44.5 44 35.5"
+            d="M15 42.5 44 71.5Q46 73.5 48 71.5L56 63.5"
             stroke={`url(#${gradientId})`}
-            strokeWidth="10"
+            strokeWidth="13"
           />
           <path
-            d="M31.8 20.6 43.9 32.7M20.3 31.3 32.4 43.4"
-            stroke="white"
-            strokeOpacity="0.84"
-            strokeWidth="3.2"
+            d="M29.5 86.5 14 71Q10.5 67.5 14 64L26 52Q29.5 48.5 33 52L42.5 61.5Q44.5 63.5 46.5 61.5L56 52"
+            stroke={`url(#${gradientId})`}
+            strokeWidth="13"
           />
-          <g className="sarah-logo-shimmer">
-            <path
-              d="M40 9.5 55 24.5 44.5 35 29 19.5 20 28.5"
-              stroke={`url(#${shineId})`}
-              strokeWidth="6.2"
-            />
-            <path
-              d="M24 54.5 9 39.5 19.5 29 35 44.5 44 35.5"
-              stroke={`url(#${shineId})`}
-              strokeWidth="6.2"
-            />
-          </g>
+          <path d="M20 48 49 19M23 77 52 48" stroke={`url(#${gradientId})`} strokeWidth="13" />
+          <path
+            className="sarah-logo-shimmer"
+            d="M42.5 9.5 58 25Q61.5 28.5 58 32L46 44Q42.5 47.5 39 44L29.5 34.5Q27.5 32.5 25.5 34.5L16 44M15 42.5 44 71.5Q46 73.5 48 71.5L56 63.5M29.5 86.5 14 71Q10.5 67.5 14 64L26 52Q29.5 48.5 33 52L42.5 61.5Q44.5 63.5 46.5 61.5L56 52M20 48 49 19M23 77 52 48"
+            stroke={`url(#${shineId})`}
+            strokeWidth="6"
+          />
         </g>
       </svg>
 
