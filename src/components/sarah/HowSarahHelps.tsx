@@ -1,3 +1,4 @@
+import { HandUnderline } from "./HandUnderline";
 import { Reveal } from "./Reveal";
 
 const demos = [
@@ -30,8 +31,11 @@ export function HowSarahHelps() {
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <h2 className="text-[36px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[48px]">
-              This is what catches leads{" "}
-              <span className="text-gradient">before they disappear.</span>
+              This is how they handle{" "}
+              <HandUnderline>
+                <span className="text-gradient">inquiries</span>
+              </HandUnderline>{" "}
+              now
             </h2>
           </Reveal>
         </div>
@@ -39,17 +43,24 @@ export function HowSarahHelps() {
         <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 lg:grid-cols-6">
           {demos.map((d, i) => {
             const colSpan = "lg:col-span-2";
-            const colStart =
-              i === 3 ? "lg:col-start-2" : i === 4 ? "lg:col-start-4" : "";
+            const colStart = i === 3 ? "lg:col-start-2" : i === 4 ? "lg:col-start-4" : "";
             return (
               <Reveal key={d.title} delay={(i % 3) * 80} className={`${colSpan} ${colStart}`}>
                 <article className="group h-full overflow-hidden rounded-[26px] border border-border-soft bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card">
                   <div className="relative h-44 overflow-hidden bg-gradient-primary">
-                    <div aria-hidden className="absolute inset-0 opacity-25" style={{ background: "radial-gradient(circle at 30% 20%, white, transparent 50%)" }} />
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 opacity-25"
+                      style={{
+                        background: "radial-gradient(circle at 30% 20%, white, transparent 50%)",
+                      }}
+                    />
                   </div>
                   <div className="p-6">
                     <h3 className="text-[19px] font-bold text-foreground">{d.title}</h3>
-                    <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">{d.text}</p>
+                    <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">
+                      {d.text}
+                    </p>
                   </div>
                 </article>
               </Reveal>

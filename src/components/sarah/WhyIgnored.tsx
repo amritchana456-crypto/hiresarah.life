@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { HandUnderline } from "./HandUnderline";
 import { Reveal } from "./Reveal";
 import lowIntentOptionsSvg from "../../../.svg/LowIntentOptions.svg";
 import lowIntentPersonSvg from "../../../.svg/LowIntentPerson.svg";
@@ -52,8 +53,8 @@ const reasons = [
 ];
 
 const elitePoints = [
-  "Their best agents don’t deal with time-wasters anymore.",
-  "They’re replying instantly, even at 10:30 PM.",
+  "Their best agents don't deal with time-wasters.",
+  "They're replying instantly, even at 10:30 PM.",
   "No message sits unanswered anymore.",
 ];
 
@@ -155,9 +156,7 @@ function ReasonCard({ reason }: { reason: Reason }) {
         <reason.Icon className="h-[22px] w-[22px]" />
       </div>
       <h3 className="mt-4 text-[19px] font-bold text-foreground">{reason.title}</h3>
-      <p className="mt-1.5 text-[14.5px] leading-relaxed text-muted-foreground">
-        {reason.text}
-      </p>
+      <p className="mt-1.5 text-[14.5px] leading-relaxed text-muted-foreground">{reason.text}</p>
     </div>
   );
 }
@@ -172,18 +171,16 @@ export function WhyIgnored() {
       />
 
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           <Reveal>
-            <h2 className="text-[32px] font-extrabold leading-[1.15] tracking-tight text-foreground sm:text-[48px]">
-              <span className="sm:hidden">
-                They looked like a buyer, but{" "}
-                <span className="text-gradient">they weren't, because...</span>
-              </span>
-              <span className="hidden sm:inline">
-                They looked like a buyer.<br />
-                <span className="text-gradient">But they weren't, because...</span>
-              </span>
+            <h2 className="text-[42px] font-extrabold leading-[1.06] text-foreground sm:text-[58px] lg:text-[72px]">
+              They looked like a <span className="text-gradient font-extrabold">buyer</span>
             </h2>
+          </Reveal>
+          <Reveal delay={160}>
+            <p className="mx-auto mt-4 max-w-xl text-[18px] font-medium leading-relaxed text-foreground sm:text-[20px] lg:mt-6 lg:text-[22px]">
+              but they weren't, <HandUnderline>because</HandUnderline>...
+            </p>
           </Reveal>
         </div>
 

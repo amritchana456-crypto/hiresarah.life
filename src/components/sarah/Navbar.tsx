@@ -24,9 +24,7 @@ export function Navbar() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/75 backdrop-blur-xl border-b border-border-soft"
-            : "bg-transparent"
+          scrolled ? "bg-white/75 backdrop-blur-xl border-b border-border-soft" : "bg-transparent"
         }`}
       >
         <nav className="mx-auto flex h-16 max-w-[1240px] items-center justify-between px-5 sm:px-8">
@@ -60,8 +58,19 @@ export function Navbar() {
             onClick={() => setOpen(true)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-soft bg-white/80 backdrop-blur md:hidden"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M4 7h16M4 12h16M4 17h16" />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <defs>
+                <linearGradient id="mobile-menu-gradient" x1="4" x2="20" y1="7" y2="17">
+                  <stop stopColor="#7357F6" />
+                  <stop offset="1" stopColor="#F45BD4" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="url(#mobile-menu-gradient)"
+                strokeLinecap="round"
+                strokeWidth="2.4"
+              />
             </svg>
           </button>
         </nav>

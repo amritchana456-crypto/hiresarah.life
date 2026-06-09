@@ -4,6 +4,20 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-09
+
+- `src/components/sarah/HandUnderline.tsx`: Added a reusable curved gradient underline for hand-drawn emphasis under specific phrases.
+- `src/components/sarah/Navbar.tsx`: Changed the mobile hamburger icon to use the Sarah purple-pink gradient.
+- `src/components/sarah/Hero.tsx`: Added the hand-drawn underline under "never buy" in the hero subheadline.
+- `src/components/sarah/Problem.tsx`: Updated section copy and added the hand-drawn underline under "30 minutes".
+- `src/components/sarah/WhyIgnored.tsx`: Restyled the buyer line as subheadline copy, applied gradient only to "buyer", underlined "because", and shortened the time-wasters bullet.
+- `src/components/sarah/HowSarahHelps.tsx`: Replaced the section headline and applied gradient emphasis to "inquiries".
+- `src/components/sarah/FounderCTA.tsx`: Replaced the founder headline/body copy and updated the footer to a founder-style message.
+- `src/components/sarah/WhyIgnored.tsx`: Split the buyer line into hero-style headline and subheadline typography while keeping the underline under "because".
+- `src/components/sarah/WhyIgnored.tsx`: Removed the comma from the "They looked like a buyer" headline.
+- `src/components/sarah/HandUnderline.tsx`: Added a one-time viewport draw animation with a 0.2s delay for every hand-written underline.
+- `src/components/sarah/HowSarahHelps.tsx` and `src/components/sarah/FounderCTA.tsx`: Added hand-written underlines to "inquiries" and "cleaner lead flow".
+
 ## 2026-06-07
 
 - `src/components/sarah/HowSarahHelps.tsx`: Rewrote all section copy and restructured layout
