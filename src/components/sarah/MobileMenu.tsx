@@ -2,15 +2,20 @@ import { useEffect } from "react";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 
-interface Link { href: string; label: string }
+interface Link {
+  href: string;
+  label: string;
+}
 
 export function MobileMenu({
   open,
   onClose,
+  onBook,
   links,
 }: {
   open: boolean;
   onClose: () => void;
+  onBook: () => void;
   links: Link[];
 }) {
   useEffect(() => {
@@ -56,7 +61,15 @@ export function MobileMenu({
             onClick={onClose}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-soft"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
               <path d="M6 6l12 12M18 6L6 18" />
             </svg>
           </button>
@@ -80,9 +93,7 @@ export function MobileMenu({
             size="lg"
             onClick={() => {
               onClose();
-              setTimeout(() => {
-                document.querySelector("#cta")?.scrollIntoView({ behavior: "smooth" });
-              }, 200);
+              window.setTimeout(onBook, 180);
             }}
           >
             Hire Sarah free

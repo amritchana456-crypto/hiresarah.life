@@ -3,7 +3,7 @@ import { HandUnderline } from "./HandUnderline";
 import { Reveal } from "./Reveal";
 import heroSvg from "../../../.svg/Hero.svg";
 
-export function Hero() {
+export function Hero({ onBook }: { onBook: () => void }) {
   return (
     <section
       id="top"
@@ -37,10 +37,7 @@ export function Hero() {
             delay={320}
             className="order-4 relative z-10 flex flex-col items-center gap-4 lg:mt-9 lg:items-start"
           >
-            <Button
-              size="lg"
-              onClick={() => document.querySelector("#cta")?.scrollIntoView({ behavior: "smooth" })}
-            >
+            <Button size="lg" onClick={onBook}>
               Hire Sarah for 3 days free
               <svg
                 width="16"

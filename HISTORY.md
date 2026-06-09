@@ -17,6 +17,10 @@ A running log of work done in this repository. Updated each session so context s
 - `src/components/sarah/WhyIgnored.tsx`: Removed the comma from the "They looked like a buyer" headline.
 - `src/components/sarah/HandUnderline.tsx`: Added a one-time viewport draw animation with a 0.2s delay for every hand-written underline.
 - `src/components/sarah/HowSarahHelps.tsx` and `src/components/sarah/FounderCTA.tsx`: Added hand-written underlines to "inquiries" and "cleaner lead flow".
+- `src/components/sarah/BookingModal.tsx`: Added a branded Google Calendar booking popup for the Sarah setup call.
+- `src/routes/index.tsx`, `src/components/sarah/Navbar.tsx`, `src/components/sarah/MobileMenu.tsx`, `src/components/sarah/Hero.tsx`, and `src/components/sarah/FounderCTA.tsx`: Wired Sarah CTA buttons to open the booking popup.
+- `src/components/sarah/FounderCTA.tsx`: Shortened the final CTA headline and subheadline for mobile clarity.
+- `src/components/sarah/Logo.tsx`: Replaced the sparkle mark with an animated code-built S monogram using Sarah's brand gradient.
 
 ## 2026-06-07
 

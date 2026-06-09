@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { BookingModal } from "@/components/sarah/BookingModal";
 import { Navbar } from "@/components/sarah/Navbar";
 import { Hero } from "@/components/sarah/Hero";
 import { Problem } from "@/components/sarah/Problem";
@@ -15,7 +17,10 @@ export const Route = createFileRoute("/")({
         content:
           "Sarah helps real estate agency managers qualify property inquiries, reply faster, save lead details, share property links, and route serious buyers before team time is wasted.",
       },
-      { property: "og:title", content: "Sarah — Digital Team Member for Real Estate Agency Managers" },
+      {
+        property: "og:title",
+        content: "Sarah — Digital Team Member for Real Estate Agency Managers",
+      },
       {
         property: "og:description",
         content:
@@ -25,9 +30,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [
-      { rel: "canonical", href: "/" },
-    ],
+    links: [{ rel: "canonical", href: "/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -39,7 +42,12 @@ export const Route = createFileRoute("/")({
           description:
             "Sarah is a digital team member for real estate agency managers. She qualifies inquiries, saves leads to CRM, shares property links, books viewings, and routes serious buyers to the right agent.",
           operatingSystem: "Web",
-          offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "3-day free trial for 3 agency managers" },
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+            description: "3-day free trial for 3 agency managers",
+          },
         }),
       },
     ],
@@ -48,14 +56,18 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const openBooking = () => setBookingOpen(true);
+
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background">
-      <Navbar />
-      <Hero />
+      <Navbar onBook={openBooking} />
+      <Hero onBook={openBooking} />
       <Problem />
       <WhyIgnored />
       <HowSarahHelps />
-      <FounderCTA />
+      <FounderCTA onBook={openBooking} />
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </main>
   );
 }

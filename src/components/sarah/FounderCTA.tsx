@@ -2,7 +2,7 @@ import { HandUnderline } from "./HandUnderline";
 import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
 
-export function FounderCTA() {
+export function FounderCTA({ onBook }: { onBook: () => void }) {
   return (
     <section id="creator" className="relative pt-28 sm:pt-36">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
@@ -92,16 +92,16 @@ export function FounderCTA() {
                 <span className="h-1.5 w-1.5 rounded-full bg-green animate-pulse-dot" />3 spots only
               </span>
               <h2 className="mt-5 text-[34px] font-extrabold leading-[1.08] tracking-tight sm:text-[48px]">
-                Want Sarah to handle your first layer of inquiries for 3 days?
+                Test Sarah on your real inquiries.
               </h2>
               <p className="mt-5 text-[16.5px] leading-relaxed text-white/85">
-                I'm opening this free test to only 3 real estate agency managers. Sarah will be
-                tested with your workflow so you can see how she handles inquiries before you decide
-                anything.
+                She replies, qualifies, and captures serious buyers before they talk to other
+                agencies.
               </p>
               <div className="mt-9 flex flex-col items-center gap-3">
                 <button
                   type="button"
+                  onClick={onBook}
                   className="inline-flex h-14 items-center gap-2 rounded-full bg-white px-8 text-[15px] font-bold text-primary shadow-cta transition-all hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-12px_rgba(0,0,0,0.3)]"
                 >
                   Hire Sarah for 3 days free

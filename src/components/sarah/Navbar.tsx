@@ -9,7 +9,7 @@ const links = [
   { href: "#creator", label: "Creator" },
 ];
 
-export function Navbar() {
+export function Navbar({ onBook }: { onBook: () => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -46,7 +46,7 @@ export function Navbar() {
           </ul>
 
           <div className="hidden md:block">
-            <Button size="sm" onClick={() => scrollTo("#cta")}>
+            <Button size="sm" onClick={onBook}>
               Hire Sarah free
             </Button>
           </div>
@@ -75,12 +75,7 @@ export function Navbar() {
           </button>
         </nav>
       </header>
-      <MobileMenu open={open} onClose={() => setOpen(false)} links={links} />
+      <MobileMenu open={open} onClose={() => setOpen(false)} onBook={onBook} links={links} />
     </>
   );
-}
-
-function scrollTo(hash: string) {
-  const el = document.querySelector(hash);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
