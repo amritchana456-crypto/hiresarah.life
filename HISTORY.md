@@ -4,6 +4,16 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-10
+
+- `CLAUDE.md`: Archived the old Google Calendar booking links and documented the new n8n-to-Google-Sheets lead form configuration.
+- `src/components/sarah/BookingModal.tsx`: Replaced the embedded Google Calendar booking popup with a branded lead form that posts name, email, agency, role, inquiry channel, main problem, timestamp, and source to `VITE_N8N_LEAD_WEBHOOK_URL`.
+- `src/components/sarah/BookingModal.tsx`: Removed the left-side form guidance panel and widened the lead form so it is two-column on desktop and single-column on mobile/tablet.
+- `src/components/sarah/BookingModal.tsx`: Removed the form intro pill and updated the form headline/subtext to frame the lead-flow review more clearly.
+- `src/components/sarah/BookingModal.tsx`: Moved the lead-flow headline and subtext into the modal header and removed the duplicate intro above the form fields.
+- `src/components/sarah/BookingModal.tsx`: Added gradient emphasis and the animated hand underline to "understand" in the lead form modal headline.
+- `.env.local` and `.env.example`: Added the n8n lead webhook environment variable for local form submissions and documented the expected deploy variable shape.
+
 ## 2026-06-09
 
 - `src/components/sarah/HandUnderline.tsx`: Added a reusable curved gradient underline for hand-drawn emphasis under specific phrases.

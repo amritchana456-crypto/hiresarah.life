@@ -40,6 +40,16 @@ Server logic uses `createServerFn` from `@tanstack/react-start` (see `src/lib/ap
 - **Server-only config** goes in `*.server.ts` files (Vite tree-shakes these from the client bundle). Always read `process.env` inside a function body, not at module scope — Cloudflare Workers bind env at request time.
 - **Public config** (safe for browser) uses `import.meta.env.VITE_*` with the `VITE_` prefix in `.env`.
 
+### Lead Form / n8n
+
+The Sarah lead form posts to an n8n webhook configured with `VITE_N8N_LEAD_WEBHOOK_URL`. The webhook should append submissions to Google Sheets with these columns: Timestamp, Name, Email, Agency name, Role, Main inquiry channel, Main problem, Source.
+
+Archived booking links only; do not use these as runtime app config:
+
+- Google Calendar embed URL: `https://calendar.google.com/calendar/appointments/schedules/AcZssZ0eytghlqFpXoisaKqwVKKiIZsffYEp78j0Up0ktrhSObyd5HDbQwH9lr3XQ3T8xHnnvqD92GeI?gv=true`
+- Google booking page URL: `https://calendar.app.google/xTETLFK7rM1Dymuw5`
+- Old guide fields: Role; Agency name; Main inquiry channel; Biggest inquiry problem.
+
 ### State / Data Fetching
 
 TanStack Query (`@tanstack/react-query`) is set up globally via `QueryClientProvider` in `__root.tsx`. The `QueryClient` instance is passed through router context.
