@@ -6,6 +6,10 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-11
 
+- `src/components/sarah/HowSarahHelps.tsx`: Added video modal lightbox — clicking any card opens dark overlay with full video + controls + spinner until canPlay + Escape/outside-click to close; added play icon overlay on card hover; equal card heights via h-full chain on Reveal/wrapper/article; bumped preview video height h-44→h-52; scroll lock while modal open; title shown in modal. Added gradient border (purple→pink) around each card using wrapper div + 2px padding trick; replaced `bg-white` with `bg-gradient-to-b from-white to-purple-50` on card body for cohesive look; moved hover lift/shadow to outer gradient wrapper. Reduced from 5 cards to 4. Removed "Replies in seconds" card. Updated remaining cards: removed all subtitle text, replaced gradient placeholder headers with autoplay/muted/loop `<video>` elements (Start's conversation.mp4, CRM.mp4, Listings.mp4, Calendar.mp4 from public/). Updated first card title to "Start the chat. Replies in seconds. Filters out time-wasters instantly." Changed grid from `lg:grid-cols-6` with col-start offsets to clean `sm:grid-cols-2` 2×2 layout.
+
+## 2026-06-11
+
 - `src/components/sarah/Logo.tsx`: Replaced the complex 176-line face illustration + circuit board logo with a clean minimal logo — gradient-filled circle (purple #7357F6 → pink #F45BD4) with white "S" in Orbitron Bold, plus "SARAH" wordmark in Orbitron Bold with brand gradient beside it (horizontal lockup). Removed all polygon/clipPath/circuit-board code and `useId` dependency.
 
 
