@@ -4,6 +4,15 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-11
+
+- `src/components/sarah/Logo.tsx`: Replaced the complex 176-line face illustration + circuit board logo with a clean minimal logo — gradient-filled circle (purple #7357F6 → pink #F45BD4) with white "S" in Orbitron Bold, plus "SARAH" wordmark in Orbitron Bold with brand gradient beside it (horizontal lockup). Removed all polygon/clipPath/circuit-board code and `useId` dependency.
+
+
+
+- `src/components/sarah/Logo.tsx`: Replaced the dot-matrix SVG logo with a hand-coded recreation of the Canva circular AI-head logo. Uses a CSS conic-gradient ring, ~28 low-poly face triangles (purples/blues/grays), a PCB circuit brain with trace lines and node pads, a central CPU chip, and "SARAH" in Orbitron Bold with brand gradient — all inside a 44×44px container. Updates all 4 logo placements automatically.
+- `src/routes/__root.tsx`: Added Orbitron:wght@700 to the Google Fonts URL for use in the logo's SARAH text.
+
 ## 2026-06-10
 
 - `CLAUDE.md`: Archived the old Google Calendar booking links and documented the new n8n-to-Google-Sheets lead form configuration.
@@ -13,6 +22,10 @@ A running log of work done in this repository. Updated each session so context s
 - `src/components/sarah/BookingModal.tsx`: Moved the lead-flow headline and subtext into the modal header and removed the duplicate intro above the form fields.
 - `src/components/sarah/BookingModal.tsx`: Added gradient emphasis and the animated hand underline to "understand" in the lead form modal headline.
 - `.env.local` and `.env.example`: Added the n8n lead webhook environment variable for local form submissions and documented the expected deploy variable shape.
+- `src/components/sarah/Logo.tsx`: Replaced the abstract Sarah logo mark with a filled Sarah-gradient hexagon badge, white segmented S monogram, subtle badge shine, and one-time wordmark reveal animation.
+- `src/components/sarah/Navbar.tsx`: Added a gradient-tinted border shadow to the mobile hamburger menu button.
+- `src/components/sarah/Logo.tsx`: Refined the logo lockup proportions by reducing the badge footprint, tightening the icon/text gap, calming the glow, and adding more internal space around the S.
+- `src/components/sarah/Logo.tsx`: Rebuilt the logo SVG on a balanced 24x24 hexagon coordinate system to improve the icon's optical centering.
 
 ## 2026-06-09
 

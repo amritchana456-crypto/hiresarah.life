@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { background: #0f0f1a; color: #e0e0ff; font-family: sans-serif; margin: 0; padding: 32px; }
+  h2 { color: #fff; margin-bottom: 4px; }
+  .subtitle { color: #888; margin-bottom: 32px; font-size: 14px; }
+  .cards { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .card {
+    background: #1a1a2e;
+    border: 2px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 24px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.1s;
+    width: 200px;
+    text-align: center;
+  }
+  .card:hover { border-color: #AF38F9; transform: translateY(-2px); }
+  .card.selected { border-color: #AF38F9; background: #1f1535; }
+  .card h3 { margin: 16px 0 6px; color: #fff; font-size: 15px; }
+  .card p { margin: 0; color: #888; font-size: 13px; line-height: 1.4; }
+  .note { margin-top: 28px; color: #666; font-size: 13px; text-align: center; }
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+</style>
+<script>
+function pick(el) {
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  if (window.recordChoice) recordChoice(el.dataset.choice, el.querySelector('h3').textContent);
+}
+</script>
+</head>
+<body>
+
+<h2>What color should the "S" be?</h2>
+<p class="subtitle">Shown in Orbitron (similar geometric style) — final will use Mokoto</p>
+
+<div class="cards">
+
+  <!-- A: Flat purple -->
+  <div class="card" data-choice="flat-purple" onclick="pick(this)">
+    <svg viewBox="0 0 24 24" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="11.6" fill="none" stroke="#AF38F9" stroke-width="0.8"/>
+      <text x="12" y="16.2" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="11" font-weight="900" fill="#AF38F9">S</text>
+    </svg>
+    <h3>A — Flat Purple</h3>
+    <p>Same as original Akiflow. Clean, single color.</p>
+  </div>
+
+  <!-- B: Brand gradient -->
+  <div class="card" data-choice="gradient" onclick="pick(this)">
+    <svg viewBox="0 0 24 24" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#7357F6"/>
+          <stop offset="1" stop-color="#F45BD4"/>
+        </linearGradient>
+      </defs>
+      <circle cx="12" cy="12" r="11.6" fill="none" stroke="url(#g1)" stroke-width="0.8"/>
+      <text x="12" y="16.2" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="11" font-weight="900" fill="url(#g1)">S</text>
+    </svg>
+    <h3>B — Brand Gradient</h3>
+    <p>Purple → pink. Matches Sarah's existing color palette.</p>
+  </div>
+
+  <!-- C: White S, gradient ring -->
+  <div class="card" data-choice="white-on-gradient" onclick="pick(this)">
+    <svg viewBox="0 0 24 24" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g2" x1="0" y1="0" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#7357F6"/>
+          <stop offset="1" stop-color="#F45BD4"/>
+        </linearGradient>
+      </defs>
+      <circle cx="12" cy="12" r="11.6" fill="none" stroke="url(#g2)" stroke-width="0.8"/>
+      <text x="12" y="16.2" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="11" font-weight="900" fill="#ffffff">S</text>
+    </svg>
+    <h3>C — White S</h3>
+    <p>White letter, gradient circle ring. Bold contrast.</p>
+  </div>
+
+  <!-- D: Filled circle with white S -->
+  <div class="card" data-choice="filled-circle" onclick="pick(this)">
+    <svg viewBox="0 0 24 24" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g3" x1="0" y1="0" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#7357F6"/>
+          <stop offset="1" stop-color="#F45BD4"/>
+        </linearGradient>
+      </defs>
+      <circle cx="12" cy="12" r="12" fill="url(#g3)"/>
+      <text x="12" y="16.2" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="11" font-weight="900" fill="#ffffff">S</text>
+    </svg>
+    <h3>D — Filled Circle</h3>
+    <p>Gradient-filled circle, white S inside. Solid and punchy.</p>
+  </div>
+
+</div>
+
+<p class="note">Click to select, then reply in the terminal.</p>
+
+</body>
+</html>

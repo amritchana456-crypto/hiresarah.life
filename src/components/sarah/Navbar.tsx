@@ -56,7 +56,7 @@ export function Navbar({ onBook }: { onBook: () => void }) {
             aria-label="Open menu"
             aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-soft bg-white/80 backdrop-blur md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/80 bg-white/85 shadow-[0_0_0_1px_rgba(115,87,246,0.28),0_10px_24px_-12px_rgba(244,91,212,0.72)] backdrop-blur transition-shadow hover:shadow-[0_0_0_1px_rgba(244,91,212,0.42),0_14px_28px_-12px_rgba(115,87,246,0.8)] md:hidden"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
               <defs>
