@@ -52,15 +52,16 @@ const reasons = [
   { title: "Comparing", text: "Comparing options. Not choosing you.", Icon: ComparingIcon },
 ];
 
-const elitePoints = [
-  "Their best agents don't deal with time-wasters.",
-  "They're replying instantly, even at 10:30 PM.",
-  "No message sits unanswered anymore.",
+const timelineEvents = [
+  { time: "10:30 PM", text: "Buyer submits an enquiry.", muted: false, impact: false },
+  { time: "10:30 PM", text: "Your agents are off. It's late.", muted: true, impact: false },
+  { time: "10:47 PM", text: "A competitor replies.", muted: false, impact: false },
+  { time: "9:04 AM",  text: "You reply. They've already booked a viewing.", muted: false, impact: true },
 ];
 
 type Reason = (typeof reasons)[number];
 
-function EliteManagersAnimation() {
+function ChatAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -75,7 +76,7 @@ function EliteManagersAnimation() {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        path: "/lottie/elite-managers.json",
+        path: "/lottie/chat.json",
         rendererSettings: {
           preserveAspectRatio: "xMidYMid meet",
         },
@@ -91,9 +92,8 @@ function EliteManagersAnimation() {
   return (
     <div
       ref={containerRef}
-      data-lottie-elite
       aria-hidden
-      className="flex h-full min-h-[220px] w-full max-w-[500px] scale-[1.14] items-center justify-center sm:scale-100"
+      className="h-[260px] w-[260px] sm:h-[300px] sm:w-[300px]"
     />
   );
 }
@@ -193,45 +193,73 @@ export function WhyIgnored() {
           ))}
         </div>
 
-        {/* Bridge card */}
+        {/* Bridge card — speed timeline */}
         <Reveal delay={300}>
           <div className="relative mx-auto mt-16 max-w-5xl overflow-hidden rounded-[32px] border border-border-soft bg-white p-6 shadow-card sm:p-8 lg:p-10">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
-              <div className="mx-auto max-w-[500px] text-center lg:mx-0 lg:-translate-y-3 lg:text-left">
-                <h3 className="text-[32px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[42px] lg:text-[46px]">
-                  <span className="text-gradient">Some managers</span> figured this out.
+              <div className="mx-auto max-w-[500px] text-center lg:mx-0 lg:text-left">
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+                  The only metric that matters
+                </p>
+                <h3 className="mt-3 text-[32px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[40px] lg:text-[44px]">
+                  First to reply.
+                  <br />
+                  <span className="text-gradient">First to close.</span>
                 </h3>
 
-                <ul className="mt-5 space-y-3.5 text-left sm:mt-6">
-                  {elitePoints.map((point, i) => (
-                    <li key={point} className="flex items-center gap-3">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-white shadow-soft">
-                        <svg
-                          width="15"
-                          height="15"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="animate-x-soft origin-center"
-                          style={{ animationDelay: `${i * 0.35}s` }}
-                          aria-hidden
+                <div className="relative mt-7 space-y-0 sm:mt-8">
+                  {/* Vertical connector line */}
+                  <div
+                    aria-hidden
+                    className="absolute left-[11px] top-3 h-[calc(100%-24px)] w-px bg-border-soft"
+                  />
+
+                  {timelineEvents.map((event, i) => (
+                    <div key={i} className="relative flex items-start gap-4 pb-5 last:pb-0">
+                      {/* Dot */}
+                      <span
+                        className={`relative z-10 mt-[3px] flex h-[23px] w-[23px] shrink-0 items-center justify-center rounded-full border-2 ${
+                          event.muted
+                            ? "border-border-soft bg-white"
+                            : event.impact
+                              ? "border-primary bg-gradient-primary shadow-soft"
+                              : "border-primary bg-white"
+                        }`}
+                      >
+                        {!event.muted && (
+                          <span
+                            className={`h-2 w-2 rounded-full ${event.impact ? "bg-white" : "bg-primary"}`}
+                          />
+                        )}
+                      </span>
+
+                      <div className="flex flex-wrap items-baseline gap-x-2.5">
+                        <span
+                          className={`font-mono text-[13px] font-bold tabular-nums ${
+                            event.muted ? "text-muted-foreground/50" : "text-primary"
+                          }`}
                         >
-                          <path d="M6 6l12 12M18 6 6 18" />
-                        </svg>
-                      </span>
-                      <span className="text-[15.5px] font-semibold leading-snug text-foreground sm:text-[16.5px]">
-                        {point}
-                      </span>
-                    </li>
+                          {event.time}
+                        </span>
+                        <span
+                          className={`text-[14.5px] font-semibold leading-snug ${
+                            event.muted
+                              ? "text-muted-foreground/60"
+                              : event.impact
+                                ? "text-foreground"
+                                : "text-foreground"
+                          }`}
+                        >
+                          {event.text}
+                        </span>
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               <div className="flex min-h-[280px] items-center justify-center overflow-hidden rounded-[26px] border border-border-soft bg-gradient-to-br from-primary-softer via-white to-pink-soft p-3 sm:min-h-[320px] sm:p-7 lg:min-h-[360px]">
-                <EliteManagersAnimation />
+                <ChatAnimation />
               </div>
             </div>
           </div>

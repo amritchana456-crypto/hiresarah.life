@@ -5,7 +5,8 @@ import { Navbar } from "@/components/sarah/Navbar";
 import { Hero } from "@/components/sarah/Hero";
 import { Problem } from "@/components/sarah/Problem";
 import { WhyIgnored } from "@/components/sarah/WhyIgnored";
-import { HowSarahHelps } from "@/components/sarah/HowSarahHelps";
+import { VideoDemo } from "@/components/sarah/VideoDemo";
+import { FAQ } from "@/components/sarah/FAQ";
 import { FounderCTA } from "@/components/sarah/FounderCTA";
 
 export const Route = createFileRoute("/")({
@@ -65,7 +66,8 @@ function Index() {
       <Hero onBook={openBooking} />
       <Problem />
       <WhyIgnored />
-      <HowSarahHelps />
+      <VideoDemo />
+      <FAQ />
       <FounderCTA onBook={openBooking} />
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </main>
