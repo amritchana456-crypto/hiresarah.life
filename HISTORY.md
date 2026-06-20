@@ -4,6 +4,12 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-20 (session 5)
+
+- `src/components/sarah/FounderCTA.tsx`: Removed the founder block (heading "Built for managers who need cleaner lead flow", body copy, Amrit Chana byline, and 60-second video placeholder). Final CTA panel and footer unchanged.
+
+---
+
 ## 2026-06-20 (session 4)
 
 - `public/lottie/chat.json`: Added new Lottie file (animated chat bubbles). Recolored from original yellow/orange to brand purple (#7357F6, `[0.451,0.341,0.965,1]`) and brand pink (#F45BD4, `[0.957,0.357,0.831,1]`).

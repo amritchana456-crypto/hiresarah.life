@@ -1,4 +1,3 @@
-import { HandUnderline } from "./HandUnderline";
 import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
 
@@ -6,73 +5,6 @@ export function FounderCTA({ onBook }: { onBook: () => void }) {
   return (
     <section id="creator" className="relative pt-28 sm:pt-36">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
-        {/* Founder block */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-          <Reveal>
-            <div>
-              <h2 className="text-[36px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[44px]">
-                Built for managers who need{" "}
-                <HandUnderline>
-                  <span className="text-gradient">cleaner lead flow</span>
-                </HandUnderline>
-                .
-              </h2>
-              <div className="mt-6 space-y-4 text-[16.5px] leading-relaxed text-muted-foreground">
-                <p>I kept seeing the same problem.</p>
-                <p>Good agents were spending their day sorting weak inquiries.</p>
-                <p>Managers were asking the same questions.</p>
-                <div className="space-y-1 font-semibold text-foreground">
-                  <p>Who replied?</p>
-                  <p>Who followed up?</p>
-                  <p>Who got the lead?</p>
-                </div>
-                <p>Meanwhile serious buyers were getting lost in the noise.</p>
-                <p>Sarah was built so agents can focus on buyers.</p>
-                <p className="font-semibold text-foreground">Not admin work.</p>
-              </div>
-              <div className="mt-7 flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-primary text-[15px] font-bold text-white">
-                  AC
-                </div>
-                <div>
-                  <p className="text-[15px] font-bold text-foreground">Amrit Chana</p>
-                  <p className="text-[13px] text-muted-foreground">Creator of Sarah</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Founder video placeholder */}
-          <Reveal delay={120}>
-            <div className="relative">
-              <div
-                aria-hidden
-                className="absolute -inset-4 rounded-[36px] bg-primary-soft blur-2xl opacity-70"
-              />
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] bg-gradient-to-br from-primary-softer via-white to-pink-soft border border-border-soft shadow-card">
-                <div aria-hidden className="absolute inset-0 bg-purple-blob opacity-90" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-                  <button
-                    type="button"
-                    aria-label="Play founder video"
-                    className="group inline-flex h-20 w-20 items-center justify-center rounded-full bg-white/95 text-primary shadow-float transition-transform hover:scale-110"
-                  >
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </button>
-                  <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.16em] text-white/85">
-                    60-second founder video
-                  </p>
-                  <p className="mt-1 text-[13px] text-white/70">
-                    Placeholder · personal intro from Amrit
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-
         {/* Final CTA panel */}
         <Reveal delay={120}>
           <div
