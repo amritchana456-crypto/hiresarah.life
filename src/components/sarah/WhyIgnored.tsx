@@ -53,10 +53,10 @@ const reasons = [
 ];
 
 const timelineEvents = [
-  { time: "10:30 PM", text: "Buyer submits an enquiry.", muted: false, impact: false },
-  { time: "10:30 PM", text: "Your agents are off. It's late.", muted: true, impact: false },
-  { time: "10:47 PM", text: "A competitor replies.", muted: false, impact: false },
-  { time: "9:04 AM",  text: "You reply. They've already booked a viewing.", muted: false, impact: true },
+  { time: "10:30 PM", text: "A buyer will ask about a property.",                    muted: false, impact: false },
+  { time: "10:31 PM", text: "Silence.",                                              muted: true,  impact: false },
+  { time: "10:47 PM", text: "They'll message your competitor.",                      muted: false, impact: false },
+  { time: "9:04 AM",  text: "Your competitor gets them first. You get ignored.",     muted: false, impact: true  },
 ];
 
 type Reason = (typeof reasons)[number];
@@ -198,14 +198,13 @@ export function WhyIgnored() {
           <div className="relative mx-auto mt-16 max-w-5xl overflow-hidden rounded-[32px] border border-border-soft bg-white p-6 shadow-card sm:p-8 lg:p-10">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
               <div className="mx-auto max-w-[500px] text-center lg:mx-0 lg:text-left">
-                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
-                  The only metric that matters
-                </p>
-                <h3 className="mt-3 text-[32px] font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-[40px] lg:text-[44px]">
-                  First to reply.
-                  <br />
-                  <span className="text-gradient">First to close.</span>
+                <h3 className="text-[42px] font-extrabold leading-[1.06] tracking-tight text-foreground sm:text-[58px] lg:text-[64px]">
+                  Your office will{" "}
+                  <span className="text-gradient">close.</span>
                 </h3>
+                <p className="mt-4 text-[18px] font-medium leading-relaxed text-foreground sm:text-[20px] lg:text-[22px]">
+                  Buyers <HandUnderline>won't</HandUnderline>.
+                </p>
 
                 <div className="relative mt-7 space-y-0 sm:mt-8">
                   {/* Vertical connector line */}
