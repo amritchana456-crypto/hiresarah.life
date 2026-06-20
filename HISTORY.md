@@ -4,6 +4,11 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-20 (session 6)
+
+- `public/lottie/Share.json`: Added Share.json ("Refer_to_Friends") Lottie animation from Downloads.
+- `src/components/sarah/WhyIgnored.tsx`: Replaced `ChatAnimation` with `ShareAnimation` — swapped path from `/lottie/chat.json` to `/lottie/Share.json`, increased size from `260×260` to `300×300` (sm: `340×340`), renamed function accordingly.
+
 ## 2026-06-20 (session 5)
 
 - `src/components/sarah/FounderCTA.tsx`: Removed the founder block (heading "Built for managers who need cleaner lead flow", body copy, Amrit Chana byline, and 60-second video placeholder). Final CTA panel and footer unchanged.

@@ -61,7 +61,7 @@ const timelineEvents = [
 
 type Reason = (typeof reasons)[number];
 
-function ChatAnimation() {
+function ShareAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ function ChatAnimation() {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        path: "/lottie/chat.json",
+        path: "/lottie/Share.json",
         rendererSettings: {
           preserveAspectRatio: "xMidYMid meet",
         },
@@ -93,7 +93,7 @@ function ChatAnimation() {
     <div
       ref={containerRef}
       aria-hidden
-      className="h-[260px] w-[260px] sm:h-[300px] sm:w-[300px]"
+      className="h-[300px] w-[300px] sm:h-[340px] sm:w-[340px]"
     />
   );
 }
@@ -258,7 +258,7 @@ export function WhyIgnored() {
               </div>
 
               <div className="flex min-h-[280px] items-center justify-center overflow-hidden rounded-[26px] border border-border-soft bg-gradient-to-br from-primary-softer via-white to-pink-soft p-3 sm:min-h-[320px] sm:p-7 lg:min-h-[360px]">
-                <ChatAnimation />
+                <ShareAnimation />
               </div>
             </div>
           </div>
