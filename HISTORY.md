@@ -8,6 +8,8 @@ A running log of work done in this repository. Updated each session so context s
 
 - `src/components/sarah/Navbar.tsx`: Updated nav links — renamed "How Sarah Helps" → "How It Works", renamed "Creator" → "About", added "FAQ" link pointing to `#faq`. Now 4 links + CTA button.
 - `src/components/sarah/FAQ.tsx`: Added `id="faq"` to the outer `<section>` so the navbar FAQ link scrolls correctly.
+- `vite.config.ts`: Added `nitro: { preset: "netlify" }` — switches Nitro build target from Cloudflare Workers to Netlify Functions for Netlify deployment.
+- `netlify.toml` (new): Netlify build config — command `npm run build`, publish `.netlify/static`, functions `.netlify/functions-internal`, Node 20.
 
 ---
 
