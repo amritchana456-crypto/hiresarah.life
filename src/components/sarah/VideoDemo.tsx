@@ -74,12 +74,11 @@ export function VideoDemo() {
                 <div className="relative overflow-hidden rounded-[40px] bg-black">
                   <div className="absolute left-1/2 top-3 z-10 h-[14px] w-[90px] -translate-x-1/2 rounded-full bg-black/80" />
                   <video
-                    src="/Whatsapp_Chat.mp4"
+                    src="/videos/Demowebsite_o.mp4"
                     muted
                     playsInline
-                    loop
-                    autoPlay
-                    className="aspect-[9/16] w-full object-cover"
+                    preload="metadata"
+                    className="aspect-[540/1169] w-full object-contain"
                     aria-hidden
                   />
                   <button
@@ -154,16 +153,16 @@ export function VideoDemo() {
         >
           <div
             className="relative flex items-center justify-center"
-            style={{ height: "min(90vh, 800px)", aspectRatio: "9/16" }}
+            style={{ height: "min(90vh, 800px)", aspectRatio: "540/1169" }}
             onClick={(e) => e.stopPropagation()}
           >
             <video
               ref={modalVideoRef}
-              src="/Whatsapp_Chat.mp4"
+              src="/videos/Demowebsite_o.mp4"
               controls
               autoPlay
               playsInline
-              className="h-full w-full rounded-[24px] object-cover"
+              className="h-full w-full rounded-[24px] object-contain"
             />
             <button
               onClick={handleClose}

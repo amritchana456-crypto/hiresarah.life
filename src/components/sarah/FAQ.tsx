@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const faqs = [
@@ -26,12 +24,8 @@ const faqs = [
 ];
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number>(0);
-
-  const toggle = (i: number) => setOpenIndex(openIndex === i ? -1 : i);
-
   return (
-    <section className="relative py-20 sm:py-28">
+    <section className="relative py-20 sm:py-28 overflow-hidden">
       {/* Soft background blob */}
       <div
         aria-hidden
@@ -39,6 +33,7 @@ export function FAQ() {
       />
 
       <div className="relative mx-auto max-w-[780px] px-5 sm:px-8">
+        {/* Section header */}
         <Reveal>
           <p className="text-center text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
             Common questions
@@ -49,53 +44,57 @@ export function FAQ() {
           </h2>
         </Reveal>
 
-        <div className="mt-10 divide-y divide-border-soft">
-          {faqs.map((faq, i) => {
-            const isOpen = openIndex === i;
-            return (
-              <Reveal key={i} delay={i * 60}>
-                <div>
-                  <button
-                    onClick={() => toggle(i)}
-                    aria-expanded={isOpen}
-                    className={`flex w-full items-center justify-between gap-4 py-5 text-left transition-all duration-200 ${
-                      isOpen ? "border-l-[3px] border-primary pl-4" : "pl-0"
-                    }`}
-                  >
-                    <span
-                      className={`text-[15.5px] font-bold leading-snug transition-colors duration-200 sm:text-[16.5px] ${
-                        isOpen ? "text-primary" : "text-foreground"
-                      }`}
-                    >
-                      {faq.q}
-                    </span>
-                    <span
-                      className={`shrink-0 transition-colors duration-200 ${
-                        isOpen ? "text-primary" : "text-muted-foreground"
-                      }`}
-                    >
-                      {isOpen ? (
-                        <Minus className="h-[18px] w-[18px]" />
-                      ) : (
-                        <Plus className="h-[18px] w-[18px]" />
-                      )}
-                    </span>
-                  </button>
+        {/* Chat window */}
+        <Reveal delay={100}>
+          <div className="mt-12 rounded-3xl border border-border-soft shadow-card overflow-hidden">
+            {/* WhatsApp-style header bar */}
+            <div className="flex items-center gap-3 px-5 py-3.5 bg-primary">
+              <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                <span className="text-white font-bold text-sm leading-none">S</span>
+              </div>
+              <div className="min-w-0">
+                <p className="text-white font-semibold text-sm leading-tight">Sarah</p>
+                <p className="text-white/70 text-[11px] leading-tight flex items-center gap-1.5">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400" />
+                  Online
+                </p>
+              </div>
+            </div>
 
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className={`pb-5 text-[14.5px] leading-relaxed text-foreground/80 sm:text-[15px] ${isOpen ? "pl-4" : ""}`}>
-                      {faq.a}
-                    </p>
+            {/* Messages area */}
+            <div className="bg-surface px-4 py-6 flex flex-col gap-6">
+              {faqs.map((faq, i) => (
+                <Reveal key={i} delay={i * 120}>
+                  <div className="flex flex-col gap-2">
+                    {/* Question — incoming / left */}
+                    <div className="max-w-[72%] self-start">
+                      <p className="text-[11px] font-medium text-foreground/40 mb-1 ml-1">
+                        You
+                      </p>
+                      <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-soft">
+                        <p className="text-[14.5px] leading-relaxed text-foreground">
+                          {faq.q}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Answer — outgoing / right */}
+                    <div className="max-w-[72%] self-end">
+                      <p className="text-[11px] font-medium text-foreground/40 mb-1 mr-1 text-right">
+                        Sarah
+                      </p>
+                      <div className="bg-gradient-primary rounded-2xl rounded-br-sm px-4 py-3 shadow-soft">
+                        <p className="text-[14.5px] leading-relaxed text-white">
+                          {faq.a}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

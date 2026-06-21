@@ -6,6 +6,10 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-21
 
+- `src/components/sarah/FAQ.tsx`: Replaced accordion FAQ with WhatsApp-style chat bubble layout. Questions render as incoming bubbles (left-aligned, white bg) and answers as outgoing bubbles (right-aligned, brand purple gradient). Removed `useState`/lucide accordion logic; added chat window card with purple header bar, "S" avatar, and green online dot. Staggered `Reveal` animations (120ms apart) retained.
+
+---
+
 - `src/components/sarah/VideoDemo.tsx`: Replaced headline "Reply first. Book the viewing." with a `9:04 AM` timeline stamp followed by headline "You open your CRM." and subhead. Updated bullets to new copy. (session 1)
 - `src/components/sarah/VideoDemo.tsx`: Visual refinements — "9:04 AM" and "your CRM" made gradient at headline size (44px desktop), removed timeline dot; "already qualified" and "is booked" wrapped in `HandUnderline` draw animation; floating "Watch it happen" pill added below phone frame. (session 2)
 - `src/components/sarah/VideoDemo.tsx`: Top-aligned text column with phone frame (items-center → items-start on desktop grid); removed pill badge below phone; added prominent gradient "Watch it happen" CTA button below bullets that opens the video lightbox. (session 3)
