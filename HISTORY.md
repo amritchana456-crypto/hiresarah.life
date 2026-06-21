@@ -6,6 +6,9 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-21
 
+- `src/components/sarah/FounderCTA.tsx`: Replaced bottom CTA headline and sub-headline with fear-forward copy — headline "Someone is going to message your agency tonight.", sub-headline contrasting silence vs. booked viewing and the late-night lead bleed.
+- `src/components/sarah/FounderCTA.tsx`: Added `ChatAnimation` Lottie component (chat.json) to the CTA panel. Restructured layout from centered single column to two-column flex row — text left, animation right. Animation hidden on mobile. Reuses lottie_light dynamic import pattern from WhyIgnored.tsx.
+- `src/components/sarah/FounderCTA.tsx`: Made animation visible on mobile (removed `hidden md:flex`). Added off-white/light-purple background to animation container (`bg-gradient-to-br from-primary-softer via-white to-pink-soft`) — matching the WhyIgnored bridge card animation area style.
 - `public/images/video-cover.svg`: Created SVG cover image for the phone demo video — WhatsApp-style chat mockup with gradient header, user bubble, and Sarah reply bubble.
 - `src/components/sarah/VideoDemo.tsx`: Added `poster="/images/video-cover.svg"` to the video element so the chat cover shows instead of a black screen before play.
 - `src/components/sarah/Hero.tsx`: Reduced top padding from `pt-18…lg:pt-32` to flat `pt-20` — hero content now sits higher/above the fold on landing. Trimmed bottom padding to `pb-8 sm:pb-10 lg:pb-12`.

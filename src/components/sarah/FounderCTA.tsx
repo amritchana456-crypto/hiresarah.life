@@ -1,5 +1,37 @@
+import { useEffect, useRef } from "react";
 import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
+
+function ChatAnimation() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let destroyed = false;
+    let animation: { destroy: () => void } | undefined;
+
+    import("lottie-web/build/player/lottie_light").then((lottie) => {
+      if (destroyed || !containerRef.current) return;
+
+      animation = lottie.default.loadAnimation({
+        container: containerRef.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "/lottie/chat.json",
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid meet",
+        },
+      });
+    });
+
+    return () => {
+      destroyed = true;
+      animation?.destroy();
+    };
+  }, []);
+
+  return <div ref={containerRef} className="w-full h-full" />;
+}
 
 export function FounderCTA({ onBook }: { onBook: () => void }) {
   return (
@@ -19,38 +51,45 @@ export function FounderCTA({ onBook }: { onBook: () => void }) {
               aria-hidden
               className="pointer-events-none absolute -left-12 -bottom-12 h-72 w-72 rounded-full bg-pink/40 blur-3xl"
             />
-            <div className="relative mx-auto max-w-2xl text-center text-white">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur">
-                <span className="h-1.5 w-1.5 rounded-full bg-green animate-pulse-dot" />3 spots only
-              </span>
-              <h2 className="mt-5 text-[34px] font-extrabold leading-[1.08] tracking-tight sm:text-[48px]">
-                Test Sarah on your real inquiries.
-              </h2>
-              <p className="mt-5 text-[16.5px] leading-relaxed text-white/85">
-                She replies, qualifies, and captures serious buyers before they talk to other
-                agencies.
-              </p>
-              <div className="mt-9 flex flex-col items-center gap-3">
-                <button
-                  type="button"
-                  onClick={onBook}
-                  className="inline-flex h-14 items-center gap-2 rounded-full bg-white px-8 text-[15px] font-bold text-primary shadow-cta transition-all hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-12px_rgba(0,0,0,0.3)]"
-                >
-                  Hire Sarah for 3 days free
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+            <div className="relative flex flex-col md:flex-row md:items-center md:gap-12 lg:gap-16 text-white">
+              {/* Left: text content */}
+              <div className="flex-1 text-left">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur">
+                  <span className="h-1.5 w-1.5 rounded-full bg-green animate-pulse-dot" />3 spots only
+                </span>
+                <h2 className="mt-5 text-[34px] font-extrabold leading-[1.08] tracking-tight sm:text-[48px]">
+                  Someone is going to message your agency tonight.
+                </h2>
+                <p className="mt-5 text-[16.5px] leading-relaxed text-white/85">
+                  Will they get 8 hours of silence, or a booked viewing? Stop bleeding late-night
+                  leads to agencies that never go offline.
+                </p>
+                <div className="mt-9 flex flex-col items-start gap-3">
+                  <button
+                    type="button"
+                    onClick={onBook}
+                    className="inline-flex h-14 items-center gap-2 rounded-full bg-white px-8 text-[15px] font-bold text-primary shadow-cta transition-all hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-12px_rgba(0,0,0,0.3)]"
                   >
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg>
-                </button>
-                <p className="text-[13px] text-white/75">Only 3 agency managers accepted.</p>
+                    Hire Sarah for 3 days free
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </button>
+                  <p className="text-[13px] text-white/75">Only 3 agency managers accepted.</p>
+                </div>
+              </div>
+              {/* Right: animation — visible on all screen sizes */}
+              <div className="flex flex-shrink-0 items-center justify-center mt-8 md:mt-0 w-full h-[260px] md:w-[280px] md:h-auto md:aspect-square rounded-[26px] bg-gradient-to-br from-primary-softer via-white to-pink-soft p-4">
+                <ChatAnimation />
               </div>
             </div>
           </div>
