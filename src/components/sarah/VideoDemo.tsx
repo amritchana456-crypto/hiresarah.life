@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { Reveal } from "./Reveal";
+import { HandUnderline } from "./HandUnderline";
 
 const bullets = [
-  "Replies to inquiries in under 30 seconds — even at 10 PM.",
-  "Qualifies the buyer before your agent picks up the phone.",
-  "Books the viewing automatically while interest is still high.",
+  "Replies in 28 seconds. 24/7. Even at 10 PM.",
+  "Filters buyers from dreamers.",
+  "Books viewings while they're hot. No chasing. No ghosting.",
 ];
 
 export function VideoDemo() {
@@ -41,18 +42,31 @@ export function VideoDemo() {
 
         {/* Mobile / tablet: stacked headline above phone */}
         <Reveal>
-          <p className="text-center text-[28px] font-extrabold leading-snug text-foreground sm:text-[36px] lg:hidden">
-            Reply first.{" "}
-            <span className="text-gradient">Book the viewing.</span>
-          </p>
+          <div className="text-center lg:hidden">
+            <p className="text-[42px] font-extrabold leading-[1.06] sm:text-[58px]">
+              <span className="text-gradient">9:04 AM.</span>
+            </p>
+            <p className="text-[42px] font-extrabold leading-[1.06] text-foreground sm:text-[58px]">
+              You open <span className="text-gradient">your CRM.</span>
+            </p>
+            <p className="mx-auto mt-3 max-w-sm text-[18px] font-medium leading-relaxed text-foreground sm:text-[20px]">
+              The lead is <HandUnderline>already qualified</HandUnderline>.{" "}
+              The viewing <HandUnderline>is booked</HandUnderline>.
+            </p>
+          </div>
         </Reveal>
 
         {/* Desktop: two-column — phone left, text right */}
-        <div className="mt-10 flex flex-col items-center gap-12 lg:mt-0 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="mt-10 flex flex-col items-center gap-12 lg:mt-0 lg:grid lg:grid-cols-2 lg:items-start lg:gap-16">
 
           {/* Phone mockup */}
           <Reveal delay={150}>
-            <div className="mx-auto w-full max-w-[320px] sm:max-w-[300px] lg:mx-0 lg:justify-self-center">
+            <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[300px] lg:mx-0 lg:justify-self-center">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 blur-3xl"
+                style={{ background: "var(--gradient-primary)" }}
+              />
               <div
                 className="relative rounded-[44px] p-[5px] shadow-float"
                 style={{ background: "var(--gradient-primary)" }}
@@ -88,10 +102,18 @@ export function VideoDemo() {
           <Reveal delay={80}>
             <div className="text-center lg:text-left">
               {/* Desktop-only headline */}
-              <p className="hidden text-[36px] font-extrabold leading-snug text-foreground lg:block lg:text-[44px]">
-                Reply first.{" "}
-                <span className="text-gradient">Book the viewing.</span>
-              </p>
+              <div className="hidden lg:block">
+                <p className="text-[42px] font-extrabold leading-[1.06] sm:text-[58px] lg:text-[72px]">
+                  <span className="text-gradient">9:04 AM.</span>
+                </p>
+                <p className="text-[42px] font-extrabold leading-[1.06] text-foreground sm:text-[58px] lg:text-[72px]">
+                  You open <span className="text-gradient">your CRM.</span>
+                </p>
+                <p className="mt-3 text-[18px] font-medium leading-relaxed text-foreground sm:text-[20px] lg:text-[22px]">
+                  The lead is <HandUnderline>already qualified</HandUnderline>.{" "}
+                  The viewing <HandUnderline>is booked</HandUnderline>.
+                </p>
+              </div>
 
               <ul className="mt-8 space-y-5 lg:mt-10">
                 {bullets.map((b, i) => (
@@ -107,6 +129,18 @@ export function VideoDemo() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-8 flex justify-center lg:justify-start">
+                <button
+                  onClick={handleOpen}
+                  className="inline-flex items-center gap-2.5 rounded-full bg-gradient-primary px-6 py-3 text-[15px] font-semibold text-white shadow-float transition-transform hover:scale-105 active:scale-100"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M6 4l14 8-14 8V4z" fill="white" />
+                  </svg>
+                  Watch it happen
+                </button>
+              </div>
             </div>
           </Reveal>
         </div>

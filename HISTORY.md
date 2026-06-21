@@ -4,6 +4,13 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-21
+
+- `src/components/sarah/VideoDemo.tsx`: Replaced headline "Reply first. Book the viewing." with a `9:04 AM` timeline stamp followed by headline "You open your CRM." and subhead. Updated bullets to new copy. (session 1)
+- `src/components/sarah/VideoDemo.tsx`: Visual refinements — "9:04 AM" and "your CRM" made gradient at headline size (44px desktop), removed timeline dot; "already qualified" and "is booked" wrapped in `HandUnderline` draw animation; floating "Watch it happen" pill added below phone frame. (session 2)
+- `src/components/sarah/VideoDemo.tsx`: Top-aligned text column with phone frame (items-center → items-start on desktop grid); removed pill badge below phone; added prominent gradient "Watch it happen" CTA button below bullets that opens the video lightbox. (session 3)
+- `src/components/sarah/VideoDemo.tsx`: Matched headline font sizes to Hero h1 (42px/58px/72px + leading-[1.06]) on both mobile and desktop versions; added radial purple glow blob behind phone mockup using brand gradient. (session 4)
+
 ## 2026-06-20 (session 6)
 
 - `public/lottie/Share.json`: Added Share.json ("Refer_to_Friends") Lottie animation from Downloads.
