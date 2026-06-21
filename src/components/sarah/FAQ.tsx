@@ -31,7 +31,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="relative py-20 sm:py-24 overflow-hidden">
+    <section id="faq" className="relative py-20 sm:py-24 overflow-hidden">
       {/* Soft background blob */}
       <div
         aria-hidden

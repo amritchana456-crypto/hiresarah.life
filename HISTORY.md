@@ -6,6 +6,13 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-21
 
+- `src/components/sarah/Navbar.tsx`: Updated nav links — renamed "How Sarah Helps" → "How It Works", renamed "Creator" → "About", added "FAQ" link pointing to `#faq`. Now 4 links + CTA button.
+- `src/components/sarah/FAQ.tsx`: Added `id="faq"` to the outer `<section>` so the navbar FAQ link scrolls correctly.
+
+---
+
+## 2026-06-21
+
 - `src/components/sarah/FounderCTA.tsx`: Replaced bottom CTA headline and sub-headline with fear-forward copy — headline "Someone is going to message your agency tonight.", sub-headline contrasting silence vs. booked viewing and the late-night lead bleed.
 - `src/components/sarah/FounderCTA.tsx`: Added `ChatAnimation` Lottie component (chat.json) to the CTA panel. Restructured layout from centered single column to two-column flex row — text left, animation right. Animation hidden on mobile. Reuses lottie_light dynamic import pattern from WhyIgnored.tsx.
 - `src/components/sarah/FounderCTA.tsx`: Made animation visible on mobile (removed `hidden md:flex`). Added off-white/light-purple background to animation container (`bg-gradient-to-br from-primary-softer via-white to-pink-soft`) — matching the WhyIgnored bridge card animation area style.

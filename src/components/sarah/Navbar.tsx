@@ -5,8 +5,9 @@ import { MobileMenu } from "./MobileMenu";
 
 const links = [
   { href: "#problem", label: "Problem" },
-  { href: "#how", label: "How Sarah Helps" },
-  { href: "#creator", label: "Creator" },
+  { href: "#how", label: "How It Works" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#creator", label: "About" },
 ];
 
 export function Navbar({ onBook }: { onBook: () => void }) {
