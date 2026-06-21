@@ -6,6 +6,8 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-21
 
+- `package.json`: Bumped `nitro` from `3.0.260429-beta` to `3.0.260603-beta` to resolve npm ERESOLVE peer dependency conflict with `@lovable.dev/vite-tanstack-config@2.3.2` during Netlify build.
+
 - `src/components/sarah/Navbar.tsx`: Updated nav links — renamed "How Sarah Helps" → "How It Works", renamed "Creator" → "About", added "FAQ" link pointing to `#faq`. Now 4 links + CTA button.
 - `src/components/sarah/FAQ.tsx`: Added `id="faq"` to the outer `<section>` so the navbar FAQ link scrolls correctly.
 - `vite.config.ts`: Added `nitro: { preset: "netlify" }` — switches Nitro build target from Cloudflare Workers to Netlify Functions for Netlify deployment.
