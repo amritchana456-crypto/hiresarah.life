@@ -37,7 +37,7 @@ export function VideoDemo() {
   }, [open]);
 
   return (
-    <section className="relative py-20 sm:py-28">
+    <section className="relative py-20 sm:py-24">
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8">
 
         {/* Mobile / tablet: stacked headline above phone */}
@@ -75,6 +75,7 @@ export function VideoDemo() {
                   <div className="absolute left-1/2 top-3 z-10 h-[14px] w-[90px] -translate-x-1/2 rounded-full bg-black/80" />
                   <video
                     src="/videos/Demowebsite_o.mp4"
+                    poster="/images/video-cover.svg"
                     muted
                     playsInline
                     preload="metadata"

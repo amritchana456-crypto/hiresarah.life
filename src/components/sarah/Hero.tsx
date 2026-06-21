@@ -7,7 +7,7 @@ export function Hero({ onBook }: { onBook: () => void }) {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-18 pb-10 sm:pt-20 sm:pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20"
+      className="relative overflow-hidden pt-20 pb-8 sm:pb-10 lg:pb-12"
     >
       {/* Soft background blobs */}
       <div

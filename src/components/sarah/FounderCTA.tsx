@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 
 export function FounderCTA({ onBook }: { onBook: () => void }) {
   return (
-    <section id="creator" className="relative pt-28 sm:pt-36">
+    <section id="creator" className="relative pt-20 sm:pt-24">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         {/* Final CTA panel */}
         <Reveal delay={120}>

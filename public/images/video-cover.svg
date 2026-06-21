@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1169" width="540" height="1169">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="540" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5B4BE8"/>
+      <stop offset="1" stop-color="#7B5CF6"/>
+    </linearGradient>
+    <linearGradient id="hdr-fade" x1="0" y1="0" x2="0" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6B55F0"/>
+      <stop offset="1" stop-color="#9A80FF" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect width="540" height="1169" fill="#FFFFFF"/>
+
+  <!-- Header gradient bar -->
+  <rect x="0" y="0" width="540" height="130" fill="url(#hdr)"/>
+  <!-- Soft fade bottom edge on header -->
+  <rect x="0" y="100" width="540" height="60" fill="url(#hdr-fade)" opacity="0.5"/>
+
+  <!-- Header text -->
+  <text
+    x="270" y="72"
+    text-anchor="middle"
+    fill="white"
+    font-size="28"
+    font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif"
+    font-weight="700"
+    letter-spacing="-0.3"
+  >Watch Sarah qualify a real lead →</text>
+
+  <!-- ── Gray bubble (user message) ── -->
+  <rect x="28" y="430" width="330" height="145" rx="22" ry="22" fill="#E8E8EC"/>
+  <!-- tail -->
+  <polygon points="28,520 8,545 42,540" fill="#E8E8EC"/>
+
+  <text x="52" y="480" fill="#1C1C1E" font-size="27" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">Hi, I saw your listing</text>
+  <text x="52" y="518" fill="#1C1C1E" font-size="27" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">for the 3BHK...</text>
+
+  <!-- ── Green bubble (Sarah reply) ── -->
+  <rect x="112" y="610" width="400" height="370" rx="22" ry="22" fill="#DCF8C6"/>
+  <!-- tail -->
+  <polygon points="512,700 534,725 498,720" fill="#DCF8C6"/>
+
+  <text x="136" y="658" fill="#1C1C1E" font-size="26" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">Hi there! 👋 I can help you</text>
+  <text x="136" y="694" fill="#1C1C1E" font-size="26" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">with that. We have some</text>
+  <text x="136" y="730" fill="#1C1C1E" font-size="26" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">great 3BHK options</text>
+  <text x="136" y="766" fill="#1C1C1E" font-size="26" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">available. When would</text>
+  <text x="136" y="802" fill="#1C1C1E" font-size="26" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">you like to schedule a</text>
+  <text x="136" y="838" fill="#1C1C1E" font-size="26" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">viewing? I can send</text>
+  <text x="136" y="874" fill="#1C1C1E" font-size="26" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">details now.</text>
+
+  <!-- Timestamp + double tick -->
+  <text x="480" y="958" text-anchor="end" fill="#6B8E6B" font-size="22" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">11:09 ✓✓</text>
+
+  <!-- ── Message input bar ── -->
+  <rect x="20" y="1058" width="500" height="66" rx="33" ry="33" fill="#F2F2F7"/>
+  <text x="55" y="1099" fill="#9A9AA8" font-size="26" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif">Message...</text>
+
+  <!-- Home indicator -->
+  <rect x="185" y="1148" width="170" height="5" rx="3" fill="#1C1C1E" opacity="0.25"/>
+</svg>

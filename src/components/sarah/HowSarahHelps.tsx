@@ -47,7 +47,7 @@ export function HowSarahHelps() {
   };
 
   return (
-    <section id="how" className="relative py-28 sm:py-36 bg-gradient-soft">
+    <section id="how" className="relative py-20 sm:py-24 bg-gradient-soft">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>

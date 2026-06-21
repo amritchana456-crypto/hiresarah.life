@@ -4,7 +4,7 @@ import problemSvg from "../../../.svg/Problem.svg";
 
 export function Problem() {
   return (
-    <section id="problem" className="relative py-24 sm:py-28 lg:py-32">
+    <section id="problem" className="relative py-20 sm:py-24">
       <div className="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:px-10">
         <div className="relative z-10">
           <Reveal>

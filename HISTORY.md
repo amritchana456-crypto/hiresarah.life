@@ -6,6 +6,15 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-21
 
+- `public/images/video-cover.svg`: Created SVG cover image for the phone demo video — WhatsApp-style chat mockup with gradient header, user bubble, and Sarah reply bubble.
+- `src/components/sarah/VideoDemo.tsx`: Added `poster="/images/video-cover.svg"` to the video element so the chat cover shows instead of a black screen before play.
+- `src/components/sarah/Hero.tsx`: Reduced top padding from `pt-18…lg:pt-32` to flat `pt-20` — hero content now sits higher/above the fold on landing. Trimmed bottom padding to `pb-8 sm:pb-10 lg:pb-12`.
+- `src/components/sarah/Problem.tsx`, `WhyIgnored.tsx`, `HowSarahHelps.tsx`, `VideoDemo.tsx`, `FAQ.tsx`, `FounderCTA.tsx`: Standardised all section vertical padding to uniform `py-20 sm:py-24` (reduced from `py-24–py-36`). No content changes.
+
+---
+
+## 2026-06-21
+
 - `src/components/sarah/FAQ.tsx`: Replaced accordion FAQ with numbered editorial layout. Each item has a large typographic number (01–05) in brand purple, bold question, and muted answer below. Items separated by heavy horizontal rules. Removed all accordion logic.
 - `src/components/sarah/FAQ.tsx`: Replaced all five FAQ answers with new brand-aligned copy. Q1 updated to use universal "next listing site" instead of region-specific platforms (broad European targeting). Q3 corrected — leads go to CRM, not agents' WhatsApp. Layout and section header unchanged.
 - `src/components/sarah/FAQ.tsx`: Removed "Common questions" eyebrow label above the FAQ heading.

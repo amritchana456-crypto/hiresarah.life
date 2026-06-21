@@ -163,7 +163,7 @@ function ReasonCard({ reason }: { reason: Reason }) {
 
 export function WhyIgnored() {
   return (
-    <section id="why-ignored" className="relative overflow-hidden py-28 sm:py-36">
+    <section id="why-ignored" className="relative overflow-hidden py-20 sm:py-24">
       {/* Soft purple blob behind */}
       <div
         aria-hidden
