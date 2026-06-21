@@ -6,7 +6,11 @@ A running log of work done in this repository. Updated each session so context s
 
 ## 2026-06-21
 
-- `src/components/sarah/FAQ.tsx`: Replaced accordion FAQ with WhatsApp-style chat bubble layout. Questions render as incoming bubbles (left-aligned, white bg) and answers as outgoing bubbles (right-aligned, brand purple gradient). Removed `useState`/lucide accordion logic; added chat window card with purple header bar, "S" avatar, and green online dot. Staggered `Reveal` animations (120ms apart) retained.
+- `src/components/sarah/FAQ.tsx`: Replaced accordion FAQ with numbered editorial layout. Each item has a large typographic number (01–05) in brand purple, bold question, and muted answer below. Items separated by heavy horizontal rules. Removed all accordion logic.
+- `src/components/sarah/FAQ.tsx`: Replaced all five FAQ answers with new brand-aligned copy. Q1 updated to use universal "next listing site" instead of region-specific platforms (broad European targeting). Q3 corrected — leads go to CRM, not agents' WhatsApp. Layout and section header unchanged.
+- `src/components/sarah/FAQ.tsx`: Removed "Common questions" eyebrow label above the FAQ heading.
+- `src/components/sarah/FAQ.tsx`: Replaced numbered list design with collapsible accordion. Uses existing `src/components/ui/accordion.tsx` (Radix UI). Removed number badges and per-item Reveal wrappers; single Reveal delay=120 wraps the whole accordion block. Question text bumped to 17–19px bold; answer in muted foreground/65.
+- `src/styles.css`: Added `accordion-down` / `accordion-up` keyframes and `animate-accordion-down` / `animate-accordion-up` utility classes required by the Radix accordion content animation.
 
 ---
 
