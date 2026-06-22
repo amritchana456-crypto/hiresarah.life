@@ -4,6 +4,33 @@ A running log of work done in this repository. Updated each session so context s
 
 ---
 
+## 2026-06-22 (session 4)
+
+- Netlify: Reconnected GitHub repo `amritchana456-crypto/hiresarah.life` via "Link repository" flow — generated fresh deploy key, fixing "Unable to access repository" error.
+- Netlify: Added `VITE_N8N_LEAD_WEBHOOK_URL=https://amrit456.app.n8n.cloud/webhook/sarah-lead-form` as env variable so lead form works in production build.
+- Netlify: Full build now succeeds from GitHub (Initializing → Building → Deploying → Cleanup → "Site is live"). Auto-deploy from `main` branch is active.
+
+## 2026-06-22 (session 3)
+
+- DNS: Deleted old zone from `amritchana61`, created new zone `6a395042b54d95432b75a50e` in `amritchana456` for `hiresarah.life`.
+- DNS: Removed duplicate CNAME/A records, kept managed NETLIFY records. Added explicit A records `75.2.60.5` and `99.83.231.61` (Netlify load balancer IPs) after NETLIFY ALIAS records failed to synthesize IPs.
+- DNS: `hiresarah.life` now resolves correctly on all 4 Netlify nameservers and Cloudflare 1.1.1.1. User changed Windows DNS to 1.1.1.1 to bypass router's stale NXDOMAIN cache — site loaded successfully.
+- Site is live at https://hiresarah.life (deployed build: `main@fcd36f7`, published 6:05 PM).
+
+## 2026-06-22 (session 2)
+
+- `netlify.toml`: Fixed publish dir to `dist` (actual Nitro output), restored `npm run build` command, kept `NODE_VERSION = "22"`.
+- Git: Added remote `hiresarah` → `https://github.com/amritchana456-crypto/hiresarah.life.git` and force-pushed `main`.
+- Netlify: Connected site `symphonious-jalebi-55af20` (amritchana456 account) to `amritchana456-crypto/hiresarah.life` via PATCH API. Auto-deploy now triggers on push to `main`.
+
+## 2026-06-22
+
+- `netlify.toml`: Changed `NODE_VERSION` from `"20"` to `"22"` — `nitro@3.0.260603-beta` requires `^20.19.0 || >=22.12.0`; Netlify's "20" resolves to an older 20.x that fails the engine check.
+- `netlify.toml`: Changed build `command` from `"npm run build"` to `""` (skip remote build) and noted correct static output is `dist/` not `.netlify/static/`.
+- `.netlify/static/`: Created by copying local `dist/` build output (without MP4 videos) so pre-built files can be uploaded directly to Netlify CLI deploy.
+- `.netlify/state.json`: Updated `siteId` to `43cebcb4-ae53-4611-a517-d0d699f1eab0` (kaleidoscopic-biscotti-fbe535, amritchana61 team) to match the correct deploy target.
+- Deployed successfully to `symphonious-jalebi-55af20.netlify.app` (amritchana456 account) using Netlify CLI with personal access token + pre-built `dist/` output. amritchana61 account blocked due to exceeded credits.
+
 ## 2026-06-21
 
 - `package.json`: Bumped `nitro` from `3.0.260429-beta` to `3.0.260603-beta` to resolve npm ERESOLVE peer dependency conflict with `@lovable.dev/vite-tanstack-config@2.3.2` during Netlify build.
